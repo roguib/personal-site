@@ -1,4 +1,5 @@
 import "./App.css";
+import Editor from "./components/editor";
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
       </div>
 
       <div className="col title">
-        <p>Lorem</p>
+        <Editor></Editor>
       </div>
     </div>
   );

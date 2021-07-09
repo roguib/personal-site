@@ -1,0 +1,64 @@
+:root {
+  --red: rgb(255, 96, 92);
+  --yellow: rgb(255, 189, 68);
+  --green: rgb(0, 202, 78);
+  --bg: rgb(41, 45, 42);
+  --bg-dark: rgb(21, 23, 31);
+  --radius: 5px;
+}
+
+.editor {
+  position: relative;
+  width: 750px;
+  height: 500px;
+  background-color: var(--bg);
+  border-radius: var(--radius);
+}
+
+.editor > .header {
+  position: absolute;
+  background-color: var(--bg);
+  width: 100%;
+  height: 20px;
+  top: 0;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.editor > .tabs {
+  position: absolute;
+  background-color: var(--bg-dark);
+  width: 100%;
+  height: 28px;
+  top: 0;
+  margin-top: 20px;
+}
+
+.editor > .header > .window-btns {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.editor > .header > .window-btns > .btn {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
+
+.btn.btn-close {
+  background-color: var(--red);
+}
+
+.btn.btn-minimize {
+  background-color: var(--yellow);
+}
+
+.btn.btn-maximize {
+  background-color: var(--green);
+}
+
+.editor > .header > .window-btns > .btn:last-child {
+  margin-right: 0px;
+}
