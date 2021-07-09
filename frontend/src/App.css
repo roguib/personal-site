@@ -24,11 +24,14 @@
 }
 
 .flex-external-icons-container > .external-icon {
-  width: 32px;
-  height: 32px;
   cursor: pointer;
   margin: 10px;
   margin-top: 20px;
+}
+
+.flex-external-icons-container > .external-icon > img {
+  width: 32px;
+  height: 32px;
 }
 
 .title {

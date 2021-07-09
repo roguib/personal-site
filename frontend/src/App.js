@@ -10,26 +10,37 @@ function App() {
           <h1>A Software Engineer</h1>
 
           <div className="flex-external-icons-container">
-            <img
+            <a
               className="external-icon"
-              src="./assets/github.svg"
-              alt="Github link logo"
-            />
-            <img
+              href="https://github.com/roguib"
+              target="_blank"
+            >
+              <img src="./assets/github.svg" alt="Github link logo" />
+            </a>
+
+            <a
               className="external-icon"
-              src="./assets/twitter.svg"
-              alt="Twitter link logo"
-            />
-            <img
+              href="https://twitter.com/rgrgib"
+              target="_blank"
+            >
+              <img src="./assets/twitter.svg" alt="Twitter link logo" />
+            </a>
+
+            <a
               className="external-icon"
-              src="./assets/ghost.ico"
-              alt="Ghost link logo"
-            />
-            <img
+              href="https://ghost.org/"
+              target="_blank"
+            >
+              <img src="./assets/ghost.ico" alt="Ghost link logo" />
+            </a>
+
+            <a
               className="external-icon"
-              src="./assets/linkedin.svg"
-              alt="Linkedin link logo"
-            />
+              href="https://www.linkedin.com/"
+              target="_blank"
+            >
+              <img src="./assets/linkedin.svg" alt="Linkedin link logo" />
+            </a>
           </div>
         </div>
       </div>
