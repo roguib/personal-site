@@ -1,3 +1,36 @@
+.flex-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15%;
+}
+
+@media (max-width: 400px) {
+  .flex-title-container {
+    display: block;
+    text-align: center;
+  }
+}
+
+.col {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.flex-external-icons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-external-icons-container > .external-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin: 10px;
+  margin-top: 20px;
+}
+
 .title {
   color: var(--white);
   font-size: 1.7rem;
