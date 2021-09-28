@@ -3,6 +3,7 @@
   --yellow: rgb(255, 189, 68);
   --green: rgb(0, 202, 78);
   --bg: rgb(41, 45, 42);
+  --bg-header: rgb(34, 33, 33);
   --bg-dark: rgb(21, 23, 31);
   --radius: 5px;
 }
@@ -28,16 +29,20 @@
 .editor > .tabs {
   position: absolute;
   background-color: var(--bg-dark);
-  width: 100%;
-  height: 28px;
-  top: 0;
+  width: 710px;
+  height: 33px;
+  top: 2px;
+  right: 0;
   margin-top: 20px;
 }
 
 .editor > .header > .window-btns {
+  background-color: var(--bg-header);
   display: flex;
   align-items: center;
-  margin: 5px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .editor > .header > .window-btns > .btn {
@@ -61,4 +66,35 @@
 
 .editor > .header > .window-btns > .btn:last-child {
   margin-right: 0px;
+}
+
+.editor > .side-btns {
+  width: 40px;
+  height: 100%;
+  background-color: var(--bg-dark);
+  border-top-left-radius: 5px;
+}
+
+.editor > .side-btns > .side-btns-wrapper {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor > .side-btns > .side-btns-wrapper > .side-btns-icon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 20px;
+  color: rgba(160, 178, 201, 0.5);
+  cursor: pointer;
+}
+
+.editor > .side-btns > .side-btns-wrapper > .side-btns-icon:last-child {
+  margin-bottom: 0px;
+}
+
+svg {
+  color: red;
 }
