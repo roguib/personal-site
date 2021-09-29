@@ -36,6 +36,27 @@
   margin-top: 20px;
 }
 
+.editor > .tabs > .tab {
+  width: 110px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid black;
+  border-top: 2px solid yellow;
+  cursor: pointer;
+}
+
+.editor > .tabs > .tab > svg {
+  color: rgba(160, 178, 201, 0.5);
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.editor > .tabs > .tab > span {
+  font-size: 0.9rem !important;
+}
+
 .editor > .header > .window-btns {
   background-color: var(--bg-header);
   display: flex;
@@ -93,8 +114,4 @@
 
 .editor > .side-btns > .side-btns-wrapper > .side-btns-icon:last-child {
   margin-bottom: 0px;
-}
-
-svg {
-  color: red;
 }
