@@ -89,14 +89,14 @@
   margin-right: 0px;
 }
 
-.editor > .side-btns {
+.editor > div > .side-btns {
   width: 40px;
   height: 100%;
   background-color: var(--bg-dark);
   border-top-left-radius: 5px;
 }
 
-.editor > .side-btns > .side-btns-wrapper {
+.editor > div > .side-btns > .side-btns-wrapper {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@
   justify-content: center;
 }
 
-.editor > .side-btns > .side-btns-wrapper > .side-btns-icon {
+.editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon {
   width: 20px;
   height: 20px;
   margin-bottom: 20px;
@@ -112,6 +112,19 @@
   cursor: pointer;
 }
 
-.editor > .side-btns > .side-btns-wrapper > .side-btns-icon:last-child {
+.editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon:last-child {
   margin-bottom: 0px;
+}
+
+.editor > div > .code {
+  position: absolute;
+  top: 65px;
+  left: 50px;
+  font-size: 0.8rem;
+  font-family: "Consolas";
+}
+
+/* remove this once we find a good theme */
+.hljs {
+  background: var(--bg) !important;
 }
