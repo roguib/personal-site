@@ -118,8 +118,8 @@
 
 .editor > div > .code {
   position: absolute;
-  top: 65px;
-  left: 50px;
+  top: 45px;
+  left: 40px;
   font-size: 0.8rem;
   font-family: "Consolas";
 }

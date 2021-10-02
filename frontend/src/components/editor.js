@@ -3,12 +3,37 @@ import React from "react";
 import hljs from "highlight.js";
 
 class Editor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { code: "" };
+  }
+
   componentDidMount() {
     this.updateCodeSyntaxHighlighting();
+    this.typeCode();
   }
 
   componentDidUpdate() {
     this.updateCodeSyntaxHighlighting();
+  }
+
+  async typeCode() {
+    // we'll read this from a json file or smth
+    const code = `console.log('hello world');`;
+    let splittedCode = code.split("");
+    while (splittedCode.length > 0) {
+      const char = splittedCode[0];
+      splittedCode = splittedCode.slice(1);
+      setTimeout(() => {
+        this.setState({ code: this.state.code + char });
+      }, 500);
+      const date = new Date();
+      await this.sleep(100);
+    }
+  }
+
+  sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   updateCodeSyntaxHighlighting = () => {
@@ -121,9 +146,7 @@ class Editor extends React.Component {
           </div>
           <div class="code">
             <pre>
-              <code class="language-javascript">
-                console.log('hello world');
-              </code>
+              <code class="language-javascript">{this.state.code}</code>
             </pre>
           </div>
         </div>
