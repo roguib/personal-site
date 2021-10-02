@@ -19,7 +19,26 @@ class Editor extends React.Component {
 
   async typeCode() {
     // we'll read this from a json file or smth
-    const code = `console.log('hello world');`;
+    const code = `// It returns the location of an element in sorted array 
+// arr[left..right], left <= elem <= right if is present,
+// otherwise returns -1
+const binarySearch = (arr, left, right, elem) => {
+    if (right >= left) {
+        let middle = left + Math.floor((right - left) / 2);
+
+        if (arr[middle] == elem) {
+          return middle;
+        }
+        if (arr[middle] > elem) {
+          return binarySearch(arr, left, middle - 1, elem);
+        }
+        return binarySearch(arr, middle, right, elem);
+    }
+    return -1;
+};
+  
+let arr = [5, 7, 14, 24, 53];
+console.log(binarySearch(arr, 0, arr.length, 14));`;
     let splittedCode = code.split("");
     while (splittedCode.length > 0) {
       const char = splittedCode[0];
@@ -28,7 +47,7 @@ class Editor extends React.Component {
         this.setState({ code: this.state.code + char });
       }, 500);
       const date = new Date();
-      await this.sleep(100);
+      await this.sleep(25);
     }
   }
 
