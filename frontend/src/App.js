@@ -46,7 +46,7 @@ function App() {
         </div>
       </div>
 
-      <div className="col title">
+      <div className="col">
         <Editor></Editor>
       </div>
     </div>

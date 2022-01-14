@@ -4,10 +4,21 @@
   margin-top: 15%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 950px) {
   .flex-title-container {
     display: block;
     text-align: center;
+  }
+
+  .col {
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 1rem !important;
+    transition: font-size 1s;
   }
 }
 
@@ -37,4 +48,5 @@
 .title {
   color: var(--white);
   font-size: 1.7rem;
+  transition: font-size 1s;
 }

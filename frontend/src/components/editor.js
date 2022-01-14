@@ -90,7 +90,7 @@ console.log(binarySearch(arr, 0, arr.length, 14));`;
             <span>dicSearch.js</span>
           </div>
         </div>
-        <div>
+        <div className="wrapper">
           <div className="side-btns">
             <div className="side-btns-wrapper">
               <svg

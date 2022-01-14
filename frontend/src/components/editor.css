@@ -6,12 +6,30 @@
   --bg-header: rgb(34, 33, 33);
   --bg-dark: rgb(21, 23, 31);
   --radius: 5px;
+  --editor-width: 750px;
+  --editor-height: 500px;
+}
+
+@media screen and (max-width: 1500px) {
+  .editor {
+    width: 600px !important;
+    height: 450px !important;
+    transition: width 2s height 2s;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .editor {
+    width: 550px !important;
+    height: 400px !important;
+    transition: width 2s height 2s;
+  }
 }
 
 .editor {
   position: relative;
-  width: 750px;
-  height: 500px;
+  width: var(--editor-width);
+  height: var(--editor-height);
   background-color: var(--bg);
   border-radius: var(--radius);
 }
@@ -29,7 +47,7 @@
 .editor > .tabs {
   position: absolute;
   background-color: var(--bg-dark);
-  width: 710px;
+  width: 100%;
   height: 33px;
   top: 2px;
   right: 0;
@@ -93,7 +111,8 @@
   width: 40px;
   height: 100%;
   background-color: var(--bg-dark);
-  border-top-left-radius: 5px;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
 }
 
 .editor > div > .side-btns > .side-btns-wrapper {
@@ -104,12 +123,17 @@
   justify-content: center;
 }
 
+.wrapper {
+  height: 100%;
+}
+
 .editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon {
   width: 20px;
   height: 20px;
   margin-bottom: 20px;
   color: rgba(160, 178, 201, 0.5);
   cursor: pointer;
+  border-bottom-left-radius: var(--radius);
 }
 
 .editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon:last-child {
