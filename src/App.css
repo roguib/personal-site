@@ -3,6 +3,12 @@
   flex-wrap: wrap;
   margin-top: 15%;
 }
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 1rem !important;
+    transition: font-size 1s;
+  }
+}
 
 @media (max-width: 950px) {
   .flex-title-container {
@@ -15,10 +21,9 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .title {
-    font-size: 1rem !important;
-    transition: font-size 1s;
+@media (max-width: 950px) {
+  #editor-wrapper {
+    display: none;
   }
 }
 
