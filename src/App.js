@@ -7,7 +7,7 @@ function App() {
       <div className="col">
         <div className="title">
           <h1>Hi,</h1>
-          <h1>I'm Roger Guasch I Ibarra,</h1>
+          <h1>I'm Roger Guasch Ibarra,</h1>
           <h1>A Software Engineer</h1>
 
           <div className="flex-external-icons-container">
@@ -46,7 +46,7 @@ function App() {
         </div>
       </div>
 
-      <div className="col title">
+      <div id="editor-wrapper" className="col">
         <Editor></Editor>
       </div>
     </div>
