@@ -57,7 +57,6 @@ console.log(binarySearch(arr, 0, arr.length, 14));`;
 
   updateCodeSyntaxHighlighting = () => {
     document.querySelectorAll("pre code").forEach((block) => {
-      console.log(block);
       hljs.highlightBlock(block);
     });
   };

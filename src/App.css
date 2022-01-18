@@ -1,7 +1,7 @@
 .flex-title-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 15%;
+  height: 100%;
 }
 @media screen and (max-width: 1200px) {
   .title {

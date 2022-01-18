@@ -6,6 +6,10 @@
   --dark: #23272a;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,6 +19,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--light-dark);
   width: 100%;
+  height: 100%;
+}
+
+#root {
   height: 100%;
 }
 
