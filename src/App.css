@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 100%;
+  background-color: var(--light-dark);
 }
 
 @media screen and (max-width: 1200px) {
@@ -27,6 +28,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  height: 100vh;
 }
 
 .flex-external-icons-container {
@@ -49,4 +51,16 @@
   color: var(--white);
   font-size: 1.7rem;
   transition: font-size 1s;
+}
+
+.empty-background {
+  background-color: var(--light-dark);
+  height: 15vh;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 100%;
+}
+
+.projects {
+  padding: 50px;
 }
