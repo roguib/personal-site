@@ -15,30 +15,26 @@ function App() {
               className="external-icon"
               href="https://github.com/roguib"
               target="_blank"
+              alt="Link to my personal account in Github"
             >
               <img src="./assets/github.svg" alt="Github link logo" />
             </a>
 
             <a
               className="external-icon"
-              href="https://twitter.com/rgrgib"
-              target="_blank"
-            >
-              <img src="./assets/twitter.svg" alt="Twitter link logo" />
-            </a>
-
-            <a
-              className="external-icon"
               href="https://ghost.org/"
               target="_blank"
+              alt="Link to my personal blog"
+              style={{display: 'none'}}
             >
               <img src="./assets/ghost.ico" alt="Ghost link logo" />
             </a>
 
             <a
               className="external-icon"
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/roger-guasch-ibarra-823457230/"
               target="_blank"
+              alt="Link to my Linkedin profile"
             >
               <img src="./assets/linkedin.svg" alt="Linkedin link logo" />
             </a>
