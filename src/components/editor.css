@@ -47,10 +47,10 @@
 .editor > .tabs {
   position: absolute;
   background-color: var(--bg-dark);
-  width: 100%;
+  width: calc(100% - 40px);
   height: 33px;
   top: 2px;
-  right: 0;
+  left: 40px;
   margin-top: 20px;
 }
 
