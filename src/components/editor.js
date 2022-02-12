@@ -162,11 +162,9 @@ console.log(binarySearch(arr, 0, arr.length, 14));`;
               </svg>
             </div>
           </div>
-          <div class="code">
-            <pre>
+            <pre className="code">
               <code class="language-javascript">{this.state.code}</code>
             </pre>
-          </div>
         </div>
       </div>
     );

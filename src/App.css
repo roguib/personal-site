@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   height: 100%;
 }
+
 @media screen and (max-width: 1200px) {
   .title {
     font-size: 1rem !important;
@@ -18,12 +19,6 @@
 
   .col {
     margin: 30px;
-  }
-}
-
-@media (max-width: 950px) {
-  #editor-wrapper {
-    display: none;
   }
 }
 

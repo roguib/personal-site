@@ -26,6 +26,23 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .editor {
+    width: 450px !important;
+    height: 300px !important;
+    transition: width 2s height 2s;
+  }
+
+  .tabs {
+    left: 34px !important;
+    width: calc(100% - 34px) !important;
+  }
+
+  .code {
+    overflow: scroll;
+  }
+}
+
 .editor {
   position: relative;
   width: var(--editor-width);
@@ -126,6 +143,7 @@
 
 .wrapper {
   height: 100%;
+  display: flex;
 }
 
 .editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon {
@@ -142,11 +160,11 @@
 }
 
 .editor > div > .code {
-  position: absolute;
-  top: 45px;
-  left: 40px;
+  position: relative;
+  margin-top: 60px;
   font-size: 0.8rem;
   font-family: "Consolas";
+  text-align: initial;
 }
 
 /* remove this once we find a good theme */
