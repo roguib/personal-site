@@ -73,6 +73,7 @@
 
 .editor > .tabs > .tab > span {
   font-size: 0.9rem !important;
+  color: rgba(160, 178, 201, 0.5);
 }
 
 .editor > .header > .window-btns {
