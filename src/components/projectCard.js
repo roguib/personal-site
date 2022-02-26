@@ -20,7 +20,7 @@ class ProjectCard extends React.Component {
             <img className="card-image" src={this.image} alt="Project logo" />
         </div>
         <div>
-            {this.anchors.map(anchor => <a href={anchor.link} className="footer-anchor">{anchor.text}</a>)}
+            {this.anchors.map(anchor => <a href={anchor.link} className="footer-anchor" target="_blank">{anchor.text}</a>)}
         </div>
       </div>
     );
