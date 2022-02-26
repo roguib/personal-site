@@ -2,18 +2,25 @@ import "./projectCard.css";
 import React from "react";
 
 class ProjectCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { code: "" };
+  constructor({ title, description, anchors, image}) {
+    super({ title, description, anchors, image });
+    this.title = title;
+    this.description = description;
+    this.anchors = anchors || [];
+    console.log(this.anchors);
+    this.image = image;
   }
 
   render() {
     return (
       <div className="card">
-        <h3>This is the title of the card</h3>
+        <h3>{this.title}</h3>
         <div className="card-body">
-            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <img className="card-image" src="./assets/github.svg" alt="Github link logo" />
+            <p className="card-text" align="justify">{this.description}</p>
+            <img className="card-image" src={this.image} alt="Project logo" />
+        </div>
+        <div>
+            {this.anchors.map(anchor => <a href={anchor.link} className="footer-anchor">{anchor.text}</a>)}
         </div>
       </div>
     );
