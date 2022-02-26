@@ -1,0 +1,28 @@
+.card {
+    width: 50vw;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 15px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text {
+    width: 80%;
+    padding-right: 15px;
+}
+
+.card-image {
+    width: 20%;
+    height: 80%;
+    margin-left: auto;
+}
+
+.footer-anchor {
+    margin-right: 10px;
+}
