@@ -52,12 +52,12 @@ function App() {
       </div>
       <div className="projects">
         <h1>Projects</h1>
-        <p>Here are a collection of interesting projects I've worked over the years. If you want to see all of them, consider visiting my Github page.</p>
+        <p>Here are a collection of interesting projects I've worked on over the years. If you want to see all of them, consider visiting my Github page.</p>
         <br />
         <div className="project-cards">
           <ProjectCard
             title="Automatic Angular snippets generator for VSCode"
-            description="A small Javascript library that parses any Angular codebase to generate custom snippets for VS Code editor. I programmed this library when I was working with Angular codebases, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library performs the necessary tasks to generate and update the necessary files while incressing developer's productivity."
+            description="A small Javascript library that parses any Angular codebase to generate custom snippets for VS Code editor. I programmed this library when I was working with Angular codebases, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library performs the necessary tasks to generate and update the necessary files while increasing the developer's productivity."
             image="./assets/npm-2009.png"
             anchors={[
               { link: "https://github.com/roguib/ng-vs-snippets", text: "Source code on Github" },
