@@ -1,0 +1,21 @@
+img {
+    height: 80px;
+    width: 80px;
+}
+
+.job-row {
+    display: flex;
+}
+
+.job-description {
+    display: flex;
+    flex-direction: column;
+    /* fill the entire space */
+    flex: 1;
+    justify-content: space-around;
+    margin-left: 16px;
+}
+
+.job-description span:first-child {
+    font-weight: bold;
+}

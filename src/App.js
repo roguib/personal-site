@@ -1,6 +1,7 @@
 import "./App.css";
 import Editor from "./components/editor";
 import ProjectCard from "./components/projectCard";
+import JobHistory from './components/JobHistory/JobHistory';
 
 function App() {
   return (
@@ -8,11 +9,8 @@ function App() {
       <div className="flex-title-container">
         <div className="col">
           <div className="title">
-            <h1>Hi,</h1>
-            <h1>I'm Roger Guasch Ibarra,</h1>
-            <h1>A Software Engineer</h1>
-
-            <div className="flex-external-icons-container">
+            <JobHistory />
+            {/* <div className="flex-external-icons-container">
               <a
                 className="external-icon"
                 href="https://github.com/roguib"
@@ -40,7 +38,7 @@ function App() {
               >
                 <img src="./assets/linkedin.svg" alt="Linkedin link logo" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
