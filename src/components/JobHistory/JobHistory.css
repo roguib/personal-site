@@ -19,23 +19,3 @@ img {
 .job-description span:first-child {
     font-weight: bold;
 }
-
-.row-separator {
-    height: 108px;
-    width: 80px;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-.line-edge {
-    height: 14px;
-    width: 14px;
-    background-color: white;
-}
-
-.horizontal-line {
-    height: 80px;
-    border-left: 1px solid white;
-    margin-left: 6.55px;
-}

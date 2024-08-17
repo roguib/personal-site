@@ -1,5 +1,6 @@
 import './JobHistory.css';
 import oracleBrandingLogo from '../../images/oracle-branding-logo.png'
+import RowSeparator from './RowSeparator/RowSeparator';
 
 const JOB_DATA = [{
     position: 'Senior Member of Technical Staff - IC3',
@@ -32,13 +33,7 @@ function JobHistory() {
                     </div>
                 </div>
                 {index < JOB_DATA.length - 1 ? (
-                    <div class="row-separator">
-                        <div>
-                            <div class="line-edge"></div>
-                            <div class="horizontal-line"></div>
-                            <div class="line-edge"></div>
-                        </div>
-                    </div>
+                    <RowSeparator />
                 ) : (<></>)}
                 </>               
             ))}
