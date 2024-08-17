@@ -1,3 +1,23 @@
+:root {
+  --jet: #2C2F33;
+  --eerie-black: #212223;
+  --platinum: #E0E0E0;
+  --harvest-gold: #ECA400;
+}
+
+body {
+  background-color: var(--jet);
+}
+
+h, p, span {
+  color: var(--platinum);
+}
+
+#root {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
 .flex-title-container {
   display: flex;
   flex-wrap: wrap;
@@ -12,23 +32,10 @@
   }
 }
 
-@media (max-width: 950px) {
-  .flex-title-container {
-    display: block;
-    text-align: center;
-  }
-
-  .col {
-    margin: 30px;
-  }
-}
-
 .col {
   flex: 1;
   align-items: center;
-  justify-content: center;
   display: flex;
-  height: 100vh;
 }
 
 .flex-external-icons-container {

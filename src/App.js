@@ -2,14 +2,24 @@ import "./App.css";
 import Editor from "./components/editor";
 import ProjectCard from "./components/projectCard";
 import JobHistory from './components/JobHistory/JobHistory';
+import PersonalDescription from './components/PersonalDescription/PersonalDescription';
 
 function App() {
   return (
     <div>
+      <div style={{display: 'flex'}}>
+        <div className="col">
+          <PersonalDescription />
+        </div>
+        <div className="col">
+          <Editor />
+        </div>
+      </div>
+      <JobHistory />
       <div className="flex-title-container">
         <div className="col">
           <div className="title">
-            <JobHistory />
+            
             {/* <div className="flex-external-icons-container">
               <a
                 className="external-icon"
@@ -43,7 +53,6 @@ function App() {
         </div>
 
         <div id="editor-wrapper" className="col">
-          <Editor></Editor>
         </div>
       </div>
       <div className="empty-background">
