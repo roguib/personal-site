@@ -4,7 +4,7 @@ import oracleBrandingLogo from '../../images/oracle-branding-logo.png'
 const JOB_DATA = [{
     position: 'Senior Member of Technical Staff - IC3',
     project: 'Visual Builder Studio',
-    date: '2022 - Act',
+    date: '2022 - Act.',
     brandingLogo: oracleBrandingLogo
 }, {
     position: 'Member of Technical Staff - IC2',
@@ -21,7 +21,8 @@ const JOB_DATA = [{
 function JobHistory() {
     return (
         <div>
-            {JOB_DATA.map(({ position, project, date, brandingLogo }) => (
+            {JOB_DATA.map(({ position, project, date, brandingLogo }, index) => (
+                <>
                 <div class="job-row">
                    <img src={brandingLogo} />
                     <div class="job-description">
@@ -30,6 +31,16 @@ function JobHistory() {
                         <span>{date}</span>
                     </div>
                 </div>
+                {index < JOB_DATA.length - 1 ? (
+                    <div class="row-separator">
+                        <div>
+                            <div class="line-edge"></div>
+                            <div class="horizontal-line"></div>
+                            <div class="line-edge"></div>
+                        </div>
+                    </div>
+                ) : (<></>)}
+                </>               
             ))}
         </div>
     );
