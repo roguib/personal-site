@@ -1,0 +1,21 @@
+.header-wrapper {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+a {
+    /* don't underline the anchor */
+    text-decoration: none;
+    color: var(--platinum);
+    cursor: pointer;
+}
+
+.item-selected {
+    border-bottom: 1px solid var(--harvest-gold);
+}
+
+a:not(:last-child) {
+    margin-right: 30px;
+}

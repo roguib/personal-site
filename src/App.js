@@ -3,10 +3,12 @@ import Editor from "./components/editor";
 import ProjectCard from "./components/projectCard";
 import JobHistory from './components/JobHistory/JobHistory';
 import PersonalDescription from './components/PersonalDescription/PersonalDescription';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div>
+      <Header />
       <div style={{display: 'flex'}}>
         <div className="col">
           <PersonalDescription />
