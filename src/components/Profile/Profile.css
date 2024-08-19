@@ -1,0 +1,16 @@
+.profile-wrapper {
+    background-color: var(--eerie-black);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-wrapper p {
+    margin: 7px;
+}
+
+.profile-wrapper p:first-child {
+    font-weight: bold;
+}

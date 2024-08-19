@@ -36,6 +36,7 @@ h, p, span {
   flex: 1;
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
 
 .flex-external-icons-container {

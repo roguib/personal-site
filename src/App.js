@@ -4,6 +4,7 @@ import ProjectCard from "./components/projectCard";
 import JobHistory from './components/JobHistory/JobHistory';
 import PersonalDescription from './components/PersonalDescription/PersonalDescription';
 import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <div style={{display: 'flex'}}>
         <div className="col">
+          <Profile />
           <PersonalDescription />
         </div>
         <div className="col">
