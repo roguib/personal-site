@@ -1,6 +1,4 @@
 .profile-wrapper {
-    background-color: var(--eerie-black);
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,4 +11,14 @@
 
 .profile-wrapper p:first-child {
     font-weight: bold;
+}
+
+.name-wrapper {
+    background-color: var(--eerie-black);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
