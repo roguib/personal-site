@@ -1,6 +1,6 @@
 import "./App.css";
 import Editor from "./components/editor";
-import ProjectCard from "./components/projectCard";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
 import JobHistory from './components/JobHistory/JobHistory';
 import PersonalDescription from './components/PersonalDescription/PersonalDescription';
 import Header from './components/Header/Header';
