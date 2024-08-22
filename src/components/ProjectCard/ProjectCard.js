@@ -6,7 +6,6 @@ function ProjectCard({ title, description, anchors, image }) {
             <h3>{title}</h3>
             <div className="card-body">
                 <p className="card-text" align="justify">{description}</p>
-                <img className="card-image" src={image} alt="Project logo" />
             </div>
             <>
                 {anchors.map(({ link, text }) => (
