@@ -1,5 +1,6 @@
 import './Header.css';
 import { useState } from 'react';
+import ThemeButton from '../ThemeButton/ThemeButton';
 
 const HEADER_DATA = [{
     label: 'About',
@@ -30,6 +31,7 @@ function Header() {
                     {label}
                 </a>
             ))}
+            <ThemeButton />
         </div>
     );
 }
