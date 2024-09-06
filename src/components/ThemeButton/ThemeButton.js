@@ -5,12 +5,17 @@ function ThemeButton() {
     const themeButtonRef = useRef(null);
 
     const handleThemeSwitch = () => {
-        console.log(themeButtonRef.current.style.position);
+        if (!!!themeButtonRef.current.className ||
+            themeButtonRef.current.className.indexOf('backwards') === 0) {
+            themeButtonRef.current.className = 'forward';
+        } else {
+            themeButtonRef.current.className = 'backwards';
+        }
     };
 
     return (
         <div class="theme-button-wrapper">
-            <button className="pot" ref={themeButtonRef} onClick={handleThemeSwitch}></button>
+            <button ref={themeButtonRef} onClick={handleThemeSwitch}></button>
         </div>
     )
 }

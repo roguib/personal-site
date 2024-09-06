@@ -14,17 +14,36 @@
     position: absolute;
 }
 
-.pot {
+.forward {
     position: absolute;
-    animation: linear infinite;
-    animation-name: run;
-    animation-duration: 5s;
-  }
-  @keyframes run {
+    animation: linear 1;
+    animation-name: run-forward;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes run-forward {
     0% {
-      left: 0;
+        left: 0;
     }
     100% {
-        left: 100%;
+        left: calc(100% - 20px);
     }
-  }
+}
+
+.backwards {
+    position: absolute;
+    animation: linear 1;
+    animation-name: run-backwards;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes run-backwards {
+    0% {
+        left: calc(100% - 20px);
+    }
+    100% {
+        left: 0;
+    }
+}
