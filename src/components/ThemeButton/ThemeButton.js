@@ -6,19 +6,27 @@ function ThemeButton() {
     const themeButtonRef = useRef(null);
     
     useEffect(() => {
+        const themeOptions = ThemeUtils.THEME_OPTIONS;
         if (!ThemeUtils.prefersDarkTheme()) {
-            themeButtonRef.current.className = ThemeUtils.THEME_OPTIONS.DARK;
+            themeButtonRef.current.className = themeOptions.LIGHT;
+            ThemeUtils.updateThemePreferences(themeOptions.LIGHT);
+            return;
         }
+        ThemeUtils.updateThemePreferences(themeOptions.DARK);
     });
 
     const handleThemeSwitch = () => {
         const themeOptions = ThemeUtils.THEME_OPTIONS;
+        let themeChoice;
         if (!!!themeButtonRef.current.className ||
             themeButtonRef.current.className.indexOf(themeOptions.DARK) === 0) {
-            themeButtonRef.current.className = themeOptions.LIGHT;
+            themeChoice = themeOptions.LIGHT;
+            themeButtonRef.current.className = themeChoice;
         } else {
-            themeButtonRef.current.className = themeOptions.DARK;
+            themeChoice = themeOptions.DARK;
+            themeButtonRef.current.className = themeChoice;
         }
+        ThemeUtils.updateThemePreferences(themeChoice);
     };
 
     return (

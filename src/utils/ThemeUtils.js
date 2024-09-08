@@ -1,4 +1,4 @@
-const THEME_KEY = "roguib.com.prefers.dark.theme";
+const THEME_KEY = "roguib.com.theme.preference";
 
 const THEME_OPTIONS = {
     LIGHT: "light",
@@ -19,6 +19,15 @@ export class ThemeUtils {
             return false;
         }
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    /**
+     * Updates the local storage flag to preserve the theme preference
+     *
+     * @param {'light' | 'dark'} preferedTheme 
+     */
+    static updateThemePreferences(preferedTheme) {
+        localStorage.setItem(THEME_KEY, preferedTheme);
     }
 
     static get THEME_OPTIONS() {
