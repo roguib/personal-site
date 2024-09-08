@@ -14,7 +14,7 @@
     position: absolute;
 }
 
-.forward {
+.light {
     position: absolute;
     animation: linear 1;
     animation-name: run-forward;
@@ -31,7 +31,7 @@
     }
 }
 
-.backwards {
+.dark {
     position: absolute;
     animation: linear 1;
     animation-name: run-backwards;

@@ -1,15 +1,23 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import ThemeUtils from "../../utils/ThemeUtils";
 import "./ThemeButton.css";
 
 function ThemeButton() {
     const themeButtonRef = useRef(null);
+    
+    useEffect(() => {
+        if (!ThemeUtils.prefersDarkTheme()) {
+            themeButtonRef.current.className = ThemeUtils.THEME_OPTIONS.DARK;
+        }
+    });
 
     const handleThemeSwitch = () => {
+        const themeOptions = ThemeUtils.THEME_OPTIONS;
         if (!!!themeButtonRef.current.className ||
-            themeButtonRef.current.className.indexOf('backwards') === 0) {
-            themeButtonRef.current.className = 'forward';
+            themeButtonRef.current.className.indexOf(themeOptions.DARK) === 0) {
+            themeButtonRef.current.className = themeOptions.LIGHT;
         } else {
-            themeButtonRef.current.className = 'backwards';
+            themeButtonRef.current.className = themeOptions.DARK;
         }
     };
 
