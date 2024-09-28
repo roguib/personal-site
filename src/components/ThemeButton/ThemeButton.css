@@ -1,8 +1,11 @@
+div {
+    --border-radius: 10px;
+}
+
 .theme-button-wrapper {
-    background-color: var(--platinum);
     width: 50px;
     height: 20px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     position: relative;
 }
 
@@ -12,6 +15,16 @@
     width: 20px;
     cursor: pointer;
     position: absolute;
+    border: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-button-wrapper-initial-pos-dark {
+    left: 0;
+}
+
+.theme-button-wrapper-initial-pos-light {
+    left: calc(100% - 20px);
 }
 
 .light {
@@ -46,4 +59,67 @@
     100% {
         left: 0;
     }
+}
+
+.theme-icons-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.initial-dark-background {
+    background-color: var(--eerie-black);
+    border-radius: var(--border-radius);
+}
+
+.initial-light-background {
+    background-color: var(--platinum);
+    border-radius: var(--border-radius);
+}
+
+.dark-background {
+    animation: linear 1;
+    animation-name: nightly-background;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nightly-background {
+    0% {
+        background-color: var(--platinum);
+        border-radius: var(--border-radius);
+    }
+    100% {
+        background-color: var(--eerie-black);
+        border-radius: var(--border-radius);
+    }
+}
+
+.light-background {
+    animation: linear 1;
+    animation-name: light-background;
+    animation-duration: 0.35s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes light-background {
+    0% {
+        background-color: var(--eerie-black);
+        border-radius: var(--border-radius);
+    }
+    100% {
+        background-color: var(--platinum);
+        border-radius: var(--border-radius);
+    }
+}
+
+img {
+    --theme-icons-size: 15px;
+}
+
+.theme-icons-wrapper img {
+    width: var(--theme-icons-size);
+    height: var(--theme-icons-size);
 }
