@@ -8,11 +8,11 @@
 .line-edge {
     height: 14px;
     width: 14px;
-    background-color: var(--bg-primary);
+    background-color: var(--tertiary);
 }
 
 .horizontal-line {
     height: 80px;
-    border-left: 1px solid var(--bg-primary);
+    border-left: 1px solid var(--tertiary);
     margin-left: 6.55px;
 }

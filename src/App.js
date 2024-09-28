@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div style={{display: 'flex'}}>
+      <div className="section" style={{display: 'flex'}}>
         <div className="col">
           <Profile />
           <PersonalDescription />
@@ -59,21 +59,19 @@ function App() {
         <div id="editor-wrapper" className="col">
         </div>
       </div>
-      <div className="empty-background">
-      </div>
-      <div className="projects">
-        <h1>Projects</h1>
+      <div className="section">
+        <h1 className="title">Projects</h1>
         <p>Here are a collection of interesting projects I've worked on over the years. If you want to see all of them, consider visiting my Github page.</p>
         <br />
         <div className="project-cards">
-          <ProjectCard
+          {/* <ProjectCard
             title="Automatic Angular snippets generator for VSCode"
             description="A small Javascript library that parses any Angular codebase and generates custom snippets for VS Code editor. I programmed this library when I was working with Angular, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library parses every component definition and generates the required file that enables custom snippets on the project."
             anchors={[
               { link: "https://github.com/roguib/ng-vs-snippets", text: "Source code on Github" },
               { link: "https://www.npmjs.com/package/@roguib/ng-vs-snippets", text: "NPM package" }
             ]}>
-          </ProjectCard>
+          </ProjectCard> */}
         </div>
       </div>
     </div>

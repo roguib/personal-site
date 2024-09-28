@@ -17,9 +17,20 @@ body {
   background-color: var(--primary);
 }
 
-h, p, span {
+h1, h2, h3, h4, h5, h6, p {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
   color: var(--tertiary);
 }
+
+span {
+  color: var(--tertiary);
+}
+
+.section {
+  margin-top: 3rem;
+}
+
 
 #root {
   margin-left: 5rem;
@@ -63,28 +74,16 @@ h, p, span {
   height: 32px;
 }
 
-.title {
-  color: var(--white);
-  font-size: 1.7rem;
-  transition: font-size 1s;
-}
-
-.empty-background {
-  background-color: var(--light-dark);
-  height: 15vh;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 100%;
-}
-
-.projects {
-  padding: 50px;
-}
-
 .project-cards {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 50px !important;
+  line-height: 50px;
 }
