@@ -31,6 +31,28 @@ export class ThemeUtils {
     }
 
     /**
+     * Updates the CSS theme variables so they adapt to the user theme choice
+     *
+     * @param {THEME_OPTIONS} theme 
+     */
+    static changeTheme(theme) {
+        switch(theme) {
+            case THEME_OPTIONS.LIGHT:
+                document.documentElement.style.setProperty("--primary", "var(--platinum)");
+                document.documentElement.style.setProperty("--bg-primary", "var(--silver)");
+                document.documentElement.style.setProperty("--secondary", "var(--silver)");
+                document.documentElement.style.setProperty("--tertiary", "var(--eerie-black)");
+            return;
+            case THEME_OPTIONS.DARK:
+                document.documentElement.style.setProperty("--primary", "var(--jet)");
+                document.documentElement.style.setProperty("--bg-primary", "var(--eerie-black)");
+                document.documentElement.style.setProperty("--secondary", "var(--eerie-black)");
+                document.documentElement.style.setProperty("--tertiary", "var(--platinum)");
+            return;
+        }
+    }
+
+    /**
      * A utility method that checks if classA exists in ref element to replace it with classB,
      * if it doesn't exist it appends classB to the list of classes the ref has
      * 

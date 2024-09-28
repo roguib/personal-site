@@ -7,6 +7,7 @@ div {
     height: 20px;
     border-radius: var(--border-radius);
     position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .theme-button-wrapper button {
@@ -75,7 +76,7 @@ div {
 }
 
 .initial-light-background {
-    background-color: var(--platinum);
+    background-color: var(--timberwolf);
     border-radius: var(--border-radius);
 }
 
@@ -88,7 +89,7 @@ div {
 
 @keyframes nightly-background {
     0% {
-        background-color: var(--platinum);
+        background-color: var(--timberwolf);
         border-radius: var(--border-radius);
     }
     100% {
@@ -110,7 +111,7 @@ div {
         border-radius: var(--border-radius);
     }
     100% {
-        background-color: var(--platinum);
+        background-color: var(--timberwolf);
         border-radius: var(--border-radius);
     }
 }

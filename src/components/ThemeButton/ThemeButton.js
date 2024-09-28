@@ -12,13 +12,14 @@ function ThemeButton() {
     useEffect(() => {
         const themeOptions = ThemeUtils.THEME_OPTIONS;
         if (!ThemeUtils.prefersDarkTheme()) {
-            // themeButtonRef.current.className = themeOptions.LIGHT;
             themeButtonRef.current.className += ` theme-button-wrapper-initial-pos-${themeOptions.LIGHT}`;
             themeIconsWrapperRef.current.className += ` initial-${themeOptions.LIGHT}-background`;
             ThemeUtils.updateThemePreferences(themeOptions.LIGHT);
+            ThemeUtils.changeTheme(themeOptions.LIGHT);
             return;
         }
         ThemeUtils.updateThemePreferences(themeOptions.DARK);
+        ThemeUtils.changeTheme(themeOptions.DARK);
         themeIconsWrapperRef.current.className += ` initial-${themeOptions.DARK}-background`;
     });
 
@@ -35,6 +36,7 @@ function ThemeButton() {
                 ThemeUtils
                     .replaceOrAppendClass(themeIconsWrapperRef, `${themeOptions.DARK}-background`, `${themeOptions.LIGHT}-background`);
             }
+            ThemeUtils.changeTheme(themeOptions.LIGHT);
         } else {
             themeChoice = themeOptions.DARK;
             themeButtonRef.current.className = themeChoice;
@@ -45,6 +47,7 @@ function ThemeButton() {
                 ThemeUtils
                     .replaceOrAppendClass(themeIconsWrapperRef, `${themeOptions.LIGHT}-background`, `${themeOptions.DARK}-background`);
             }
+            ThemeUtils.changeTheme(themeOptions.DARK);
         }
         ThemeUtils.updateThemePreferences(themeChoice);
     };

@@ -8,7 +8,7 @@
 a {
     /* don't underline the anchor */
     text-decoration: none;
-    color: var(--platinum);
+    color: var(--tertiary);
     cursor: pointer;
 }
 

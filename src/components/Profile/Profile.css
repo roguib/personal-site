@@ -14,7 +14,7 @@
 }
 
 .name-wrapper {
-    background-color: var(--eerie-black);
+    background-color: var(--bg-primary);
     border-radius: 10px;
     display: flex;
     flex-direction: column;

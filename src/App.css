@@ -3,14 +3,22 @@
   --eerie-black: #212223;
   --platinum: #E0E0E0;
   --harvest-gold: #ECA400;
+  --timberwolf: #DBD9D9;
+  --silver: #B5B5B5;
+
+  --primary: var(--jet);
+  --bg-primary: var(--eerie-black);
+  --secondary: var(--eerie-black);
+  --tertiary: var(--platinum);
+  --warning: var(--harvest-gold);
 }
 
 body {
-  background-color: var(--jet);
+  background-color: var(--primary);
 }
 
 h, p, span {
-  color: var(--platinum);
+  color: var(--tertiary);
 }
 
 #root {
