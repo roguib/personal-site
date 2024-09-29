@@ -23,7 +23,6 @@ function App() {
       <div className="flex-title-container">
         <div className="col">
           <div className="title">
-            
             {/* <div className="flex-external-icons-container">
               <a
                 className="external-icon"
@@ -54,9 +53,6 @@ function App() {
               </a>
             </div> */}
           </div>
-        </div>
-
-        <div id="editor-wrapper" className="col">
         </div>
       </div>
       <div className="section">

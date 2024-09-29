@@ -13,6 +13,10 @@
     font-weight: bold;
 }
 
+.profile-wrapper img {
+    border-radius: 40px;
+}
+
 .name-wrapper {
     background-color: var(--bg-primary);
     border-radius: 10px;
