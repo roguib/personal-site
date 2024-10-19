@@ -1,13 +1,17 @@
 import './Header.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ThemeButton from '../ThemeButton/ThemeButton';
+import ViewportUtils from '../../utils/ViewportUtils';
 
 const HEADER_DATA = [{
     label: 'About',
+    id: 'about'
 }, {
     label: 'Career',
+    id: 'job-history'
 }, {
     label: 'Projects',
+    id: 'projects'
 }, {
     label: 'Blog'
 }];
@@ -15,14 +19,32 @@ const HEADER_DATA = [{
 function Header() {
     const [itemSelected, setItemSelected] = useState(0);
 
+    useEffect(() => {
+        document.addEventListener('scrollend', () => {
+            HEADER_DATA.forEach((item, index) => {
+                if (item?.id) {
+                    const element = document.getElementById(item?.id);
+                    if (ViewportUtils.isElementInViewport(element)) {
+                        setItemSelected(() => index);
+                    }
+                }
+            });
+        })
+    }, []);
+
     const handleItemSelection = (e, itemIndex) => {
         e.preventDefault();
         e.stopPropagation();
         setItemSelected(itemIndex);
+        document
+            .getElementById(HEADER_DATA[itemIndex].id)
+            .scrollIntoView({ 
+                behavior: 'smooth' 
+            });
     }
     
     return (
-        <div class="header-wrapper">
+        <div id="header" class="header-wrapper">
             {HEADER_DATA.map(({ label }, index) => (
                 <a
                     className={`${itemSelected === index ? 'item-selected' : ''}`}
