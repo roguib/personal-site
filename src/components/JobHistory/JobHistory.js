@@ -21,13 +21,13 @@ const JOB_DATA = [{
 
 function JobHistory() {
     return (
-        <div className="section">
+        <div id="job-history" className="section">
             <h1 className="title">Career</h1>
             <div>
                 {JOB_DATA.map(({ position, project, date, brandingLogo }, index) => (
                     <>
                     <div className="job-row">
-                    <img src={brandingLogo} />
+                    <img className="job-branding-logo" src={brandingLogo} />
                         <div className="job-description">
                             <span>{position}</span>
                             <span>{project}</span>

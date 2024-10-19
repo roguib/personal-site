@@ -1,16 +1,16 @@
 import "./App.css";
 import Editor from "./components/editor";
-import ProjectCard from "./components/ProjectCard/ProjectCard";
 import JobHistory from './components/JobHistory/JobHistory';
 import PersonalDescription from './components/PersonalDescription/PersonalDescription';
+import Projects from './components/Projects/Projects';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 
 function App() {
   return (
-    <div>
+    <div className="web-content">
       <Header />
-      <div className="section" style={{display: 'flex'}}>
+      <div className="section xl-flex">
         <div className="col">
           <Profile />
           <PersonalDescription />
@@ -20,10 +20,10 @@ function App() {
         </div>
       </div>
       <JobHistory />
-      <div className="flex-title-container">
+      {/* <div className="flex-title-container">
         <div className="col">
           <div className="title">
-            {/* <div className="flex-external-icons-container">
+            <div className="flex-external-icons-container">
               <a
                 className="external-icon"
                 href="https://github.com/roguib"
@@ -51,25 +51,11 @@ function App() {
               >
                 <img src="./assets/linkedin.svg" alt="Linkedin link logo" />
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="section">
-        <h1 className="title">Projects</h1>
-        <p>Here are a collection of interesting projects I've worked on over the years. If you want to see all of them, consider visiting my Github page.</p>
-        <br />
-        <div className="project-cards">
-          {/* <ProjectCard
-            title="Automatic Angular snippets generator for VSCode"
-            description="A small Javascript library that parses any Angular codebase and generates custom snippets for VS Code editor. I programmed this library when I was working with Angular, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library parses every component definition and generates the required file that enables custom snippets on the project."
-            anchors={[
-              { link: "https://github.com/roguib/ng-vs-snippets", text: "Source code on Github" },
-              { link: "https://www.npmjs.com/package/@roguib/ng-vs-snippets", text: "NPM package" }
-            ]}>
-          </ProjectCard> */}
-        </div>
-      </div>
+      </div> */}
+      <Projects />
     </div>
   );
 }
