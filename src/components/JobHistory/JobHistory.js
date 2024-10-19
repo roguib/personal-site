@@ -1,5 +1,6 @@
 import './JobHistory.css';
 import oracleBrandingLogo from '../../images/oracle-branding-logo.png'
+import companyNoLogo from '../../images/company-no-logo.png';
 import RowSeparator from './RowSeparator/RowSeparator';
 
 const JOB_DATA = [{
@@ -16,7 +17,7 @@ const JOB_DATA = [{
     position: 'Software Developer',
     project: 'Several small projects',
     date: '2020 - 2021',
-    brandingLogo: ''
+    brandingLogo: companyNoLogo
 }];
 
 function JobHistory() {
