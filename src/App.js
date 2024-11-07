@@ -10,12 +10,12 @@ function App() {
   return (
     <div className="web-content">
       <Header />
-      <div className="section xl-flex">
-        <div className="col">
+      <div className="xl-flex">
+        <div className="col section">
           <Profile />
           <PersonalDescription />
         </div>
-        <div className="col">
+        <div className="col section">
           <Editor />
         </div>
       </div>
