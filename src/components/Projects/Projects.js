@@ -3,11 +3,6 @@ import vsCodeSnippets from '../../images/ng-vs-snippets.png';
 import monkeyPlayground from '../../images/monkey-playground.png';
 import "./Projects.css";
 
-const PROJECTS_DATA = [{
-    title: 'Automatic Angular snippets generator for VSCode',
-    description: "A small Javascript library that parses any Angular codebase and generates custom snippets for VS Code editor. I programmed this library when I was working with Angular, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library parses every component definition and generates the required file that enables custom snippets on the project.",
-}];
-
 function Projects() {
     return (
         <div id="projects" className="section">
