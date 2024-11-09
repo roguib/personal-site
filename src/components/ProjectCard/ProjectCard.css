@@ -5,6 +5,14 @@
     background-color: var(--secondary);
 }
 
+.card > a {
+    /* don't underline the anchor */
+    text-decoration: none;
+    color: var(--tertiary);
+    border-bottom: 2.5px solid var(--harvest-gold);
+    cursor: pointer;
+}
+
 .card-body {
     display: flex;
     flex-direction: row;

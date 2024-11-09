@@ -5,11 +5,11 @@
     justify-content: flex-end;
 }
 
-a {
+#header > a {
     /* don't underline the anchor */
-    text-decoration: none;
-    color: var(--tertiary);
-    cursor: pointer;
+    text-decoration: none !important;
+    color: var(--tertiary) !important;
+    cursor: pointer !important;
 }
 
 .item-selected {
