@@ -6,15 +6,19 @@ import ViewportUtils from '../../utils/ViewportUtils';
 const HEADER_DATA = [{
     label: 'About',
     id: 'about'
-}, {
+}, 
+{
     label: 'Career',
     id: 'job-history'
-}, {
+}, 
+{
     label: 'Projects',
     id: 'projects'
-}, {
-    label: 'Blog'
-}];
+}, 
+// {
+//     label: 'Blog'
+// }
+];
 
 function Header() {
     const [itemSelected, setItemSelected] = useState(0);

@@ -4,12 +4,12 @@ import companyNoLogo from '../../images/company-no-logo.png';
 import RowSeparator from './RowSeparator/RowSeparator';
 
 const JOB_DATA = [{
-    position: 'Senior Member of Technical Staff - IC3',
+    position: 'Senior Member of Technical Staff at Oracle - IC3',
     project: 'Visual Builder Studio',
     date: '2022 - Act.',
     brandingLogo: oracleBrandingLogo
 }, {
-    position: 'Member of Technical Staff - IC2',
+    position: 'Member of Technical Staff at Oracle - IC2',
     project: 'Visual Builder Studio',
     date: '2021 - 2022',
     brandingLogo: oracleBrandingLogo
