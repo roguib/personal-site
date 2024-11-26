@@ -1,0 +1,21 @@
+.header-wrapper {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#header > a {
+    /* don't underline the anchor */
+    text-decoration: none !important;
+    color: var(--tertiary) !important;
+    cursor: pointer !important;
+}
+
+.item-selected {
+    border-bottom: 1px solid var(--harvest-gold);
+}
+
+a:not(:last-child) {
+    margin-right: 30px;
+}

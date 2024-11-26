@@ -1,0 +1,28 @@
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-wrapper p {
+    margin: 7px;
+}
+
+.profile-wrapper p:first-child {
+    font-weight: bold;
+}
+
+.profile-wrapper img {
+    border-radius: 40px;
+}
+
+.name-wrapper {
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
