@@ -1,4 +1,5 @@
-import ProjectCard from '../ProjectCard/ProjectCard';
+import React from 'react';
+import ProjectCard from '../ProjectCard/ProjectCard.jsx';
 import vsCodeSnippets from '../../images/ng-vs-snippets.png';
 import monkeyPlayground from '../../images/monkey-playground.png';
 import "./Projects.css";

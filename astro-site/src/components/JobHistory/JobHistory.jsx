@@ -1,7 +1,8 @@
+import React from 'react';
 import './JobHistory.css';
 import oracleBrandingLogo from '../../images/oracle-branding-logo.png'
 import companyNoLogo from '../../images/company-no-logo.png';
-import RowSeparator from './RowSeparator/RowSeparator';
+import RowSeparator from './RowSeparator/RowSeparator.jsx';
 
 const JOB_DATA = [{
     position: 'Senior Member of Technical Staff at Oracle - IC3',

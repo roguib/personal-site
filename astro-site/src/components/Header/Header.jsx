@@ -1,6 +1,6 @@
 import './Header.css';
 import { useEffect, useState } from 'react';
-import ThemeButton from '../ThemeButton/ThemeButton';
+import ThemeButton from '../ThemeButton/ThemeButton.jsx';
 import ViewportUtils from '../../utils/ViewportUtils';
 
 const HEADER_DATA = [{

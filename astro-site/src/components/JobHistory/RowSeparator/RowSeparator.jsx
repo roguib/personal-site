@@ -1,3 +1,4 @@
+import React from 'react';
 import './RowSeparator.css';
 
 function RowSeparator() {

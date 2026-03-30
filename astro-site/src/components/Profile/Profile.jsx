@@ -1,3 +1,4 @@
+import React from 'react';
 import './Profile.css';
 import profilePicture from '../../images/profile-picture.png';
 

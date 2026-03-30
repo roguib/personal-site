@@ -1,3 +1,4 @@
+import React from 'react';
 import "./ProjectCard.css";
 
 function ProjectCard({ title, description, anchors, image }) {
