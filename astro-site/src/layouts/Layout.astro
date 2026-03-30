@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+const { title = 'Roger Guasch Ibarra' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Roger Guasch Ibarra, personal website" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/vs2015.min.css"
+    />
+    <title>{title}</title>
+    <!-- Inline theme init: runs before paint to prevent flash of wrong theme -->
+    <script is:inline>
+      (function () {
+        const THEME_KEY = 'roguib.com.theme.preference';
+        const saved = localStorage.getItem(THEME_KEY);
+        const prefersDark =
+          saved === 'dark' ||
+          (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        const theme = prefersDark ? 'dark' : 'light';
+
+        const vars = theme === 'dark'
+          ? { '--primary': 'var(--jet)', '--bg-primary': 'var(--eerie-black)', '--secondary': 'var(--eerie-black)', '--tertiary': 'var(--platinum)' }
+          : { '--primary': 'var(--platinum)', '--bg-primary': 'var(--silver)', '--secondary': 'var(--silver)', '--tertiary': 'var(--eerie-black)' };
+
+        Object.entries(vars).forEach(([k, v]) =>
+          document.documentElement.style.setProperty(k, v)
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page-root">
+      <slot />
+    </div>
+  </body>
+</html>
