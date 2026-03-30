@@ -1,0 +1,17 @@
+@media screen and (min-width: 1025px) {
+    #projects .xl-flex .col:first-child {
+        margin-right: 15px;
+    }
+
+    #projects .xl-flex .col:last-child {
+        margin-left: 15px;
+    }
+}
+
+#projects .xl-flex .col:first-child {
+    margin-bottom: 15px;
+}
+
+#projects .xl-flex .col:last-child {
+    margin-bottom: 15px;
+}

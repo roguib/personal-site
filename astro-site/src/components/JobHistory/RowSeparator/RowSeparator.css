@@ -1,0 +1,18 @@
+.row-separator {
+    height: 108px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.line-edge {
+    height: 14px;
+    width: 14px;
+    background-color: var(--tertiary);
+}
+
+.horizontal-line {
+    height: 80px;
+    border-left: 1px solid var(--tertiary);
+    margin-left: 6.55px;
+}
