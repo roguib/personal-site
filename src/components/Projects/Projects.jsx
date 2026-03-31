@@ -18,7 +18,6 @@ function Projects() {
                         description="A Java 8 implementation of the Monkey programming language, inspired by the book 'Writing an Interpreter in Go', incorporates fundamental features including variable binding, arithmetic expressions, built-in functions, closures, and more. Despite not being a Java expert, I find joy in experimenting with other languages that challenge my comfort zone. Additionally, I've crafted an interactive online playground that allows users to experiment the language directly within their web browsers."
                         anchors={[
                         { link: "https://github.com/roguib/monkey", text: "Source code on Github" },
-                        { link: "https://www.roguib.com/projects/monkey/", text: "Online playground" }
                         ]}>
                     </ProjectCard>
                 </div>
