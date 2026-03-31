@@ -1,10 +1,11 @@
+import React from 'react';
 import "./ProjectCard.css";
 
 function ProjectCard({ title, description, anchors, image }) {
     return (
         <div className="card">
             <div style={{ display: 'flex', 'justify-content': 'center' }}>
-                <img className="card-image" src={image} />
+                <img className="card-image" src={image.src} />
             </div>
             <h3>{title}</h3>
             <div className="card-body">

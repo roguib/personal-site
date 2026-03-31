@@ -1,4 +1,5 @@
-import ProjectCard from '../ProjectCard/ProjectCard';
+import React from 'react';
+import ProjectCard from '../ProjectCard/ProjectCard.jsx';
 import vsCodeSnippets from '../../images/ng-vs-snippets.png';
 import monkeyPlayground from '../../images/monkey-playground.png';
 import "./Projects.css";
@@ -12,7 +13,7 @@ function Projects() {
             <div className="xl-flex">
                 <div className="col">
                     <ProjectCard
-                        image={monkeyPlayground}
+                        image={monkeyPlayground.src}
                         title="Monkey programming language interpreter"
                         description="A Java 8 implementation of the Monkey programming language, inspired by the book 'Writing an Interpreter in Go', incorporates fundamental features including variable binding, arithmetic expressions, built-in functions, closures, and more. Despite not being a Java expert, I find joy in experimenting with other languages that challenge my comfort zone. Additionally, I've crafted an interactive online playground that allows users to experiment the language directly within their web browsers."
                         anchors={[
@@ -23,7 +24,7 @@ function Projects() {
                 </div>
                 <div className="col">
                     <ProjectCard
-                        image={vsCodeSnippets}
+                        image={vsCodeSnippets.src}
                         title="Automatic Angular snippets generator for VSCode"
                         description="A small Javascript library that parses any Angular codebase and generates custom snippets for VS Code editor. I programmed this library when I was working with Angular, as I felt I was constantly looking over the component's properties. Generating custom snippets is a tedious task, as it involves maintaining a large JSON file that can be quickly outdated. This library parses every component definition and generates the required file that enables custom snippets on the project."
                         anchors={[

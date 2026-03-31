@@ -48,9 +48,11 @@ function Header() {
     }
     
     return (
-        <div id="header" class="header-wrapper">
+        <div id="header" className="header-wrapper">
             {HEADER_DATA.map(({ label }, index) => (
                 <a
+                    key={index}
+                    href="#"
                     className={`${itemSelected === index ? 'item-selected' : ''}`}
                     onClick={(e) => handleItemSelection(e, index)}
                     onKeyDown={(e) => handleItemSelection(e, index)}>

@@ -29,7 +29,7 @@ function JobHistory() {
                 {JOB_DATA.map(({ position, project, date, brandingLogo }, index) => (
                     <>
                     <div className="job-row">
-                    <img className="job-branding-logo" src={brandingLogo} />
+                    <img className="job-branding-logo" src={brandingLogo.src} />
                         <div className="job-description">
                             <span>{position}</span>
                             <span>{project}</span>
