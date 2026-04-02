@@ -8,7 +8,7 @@ const { title = 'Roger Guasch Ibarra' } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#F5F5F7" />
     <meta name="description" content="Roger Guasch Ibarra, personal website" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -17,7 +17,15 @@ const { title = 'Roger Guasch Ibarra' } = Astro.props;
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/vs2015.min.css"
     />
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
+
     <!-- Inline theme init: runs before paint to prevent flash of wrong theme -->
     <script is:inline>
       (function () {
@@ -27,20 +35,98 @@ const { title = 'Roger Guasch Ibarra' } = Astro.props;
           saved === 'dark' ||
           (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
         const theme = prefersDark ? 'dark' : 'light';
-
-        const vars = theme === 'dark'
-          ? { '--primary': 'var(--jet)', '--bg-primary': 'var(--eerie-black)', '--secondary': 'var(--eerie-black)', '--tertiary': 'var(--platinum)' }
-          : { '--primary': 'var(--ash-gray)', '--bg-primary': 'var(--light-surface)', '--secondary': 'var(--light-surface)', '--tertiary': 'var(--eerie-black)' };
-
-        Object.entries(vars).forEach(([k, v]) =>
-          document.documentElement.style.setProperty(k, v)
-        );
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>
   <body>
+    <!-- Mesh gradient background -->
+    <div class="mesh-gradient mesh-gradient--tl" aria-hidden="true"></div>
+    <div class="mesh-gradient mesh-gradient--br" aria-hidden="true"></div>
+
+    <!-- Lume cursor effect -->
+    <div id="lume" aria-hidden="true"></div>
+
     <div class="page-root">
       <slot />
     </div>
+
+    <!-- Reveal on scroll observer -->
+    <script is:inline>
+      (function () {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        function observe() {
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            observer.observe(el);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', observe);
+        } else {
+          observe();
+        }
+      })();
+    </script>
+
+    <!-- Lume cursor tracker -->
+    <script is:inline>
+      (function () {
+        document.addEventListener('mousemove', function (e) {
+          document.documentElement.style.setProperty('--lume-x', e.clientX + 'px');
+          document.documentElement.style.setProperty('--lume-y', e.clientY + 'px');
+        });
+      })();
+    </script>
   </body>
 </html>
+
+<style>
+  .mesh-gradient {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(100px);
+  }
+
+  .mesh-gradient--tl {
+    top: -100px;
+    left: -100px;
+    background: radial-gradient(ellipse at center, rgba(0, 113, 227, 0.07), transparent 70%);
+  }
+
+  .mesh-gradient--br {
+    bottom: -100px;
+    right: -100px;
+    background: radial-gradient(ellipse at center, rgba(255, 45, 85, 0.05), transparent 70%);
+  }
+
+  #lume {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(
+      600px circle at var(--lume-x, 50%) var(--lume-y, 50%),
+      rgba(0, 113, 227, 0.04),
+      transparent 40%
+    );
+  }
+
+  .page-root {
+    position: relative;
+    z-index: 1;
+  }
+</style>

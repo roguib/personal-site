@@ -1,13 +1,11 @@
-/* from index.css */
+/* ─── Reset & Base ─────────────────────────────────────────────── */
 html {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -19,16 +17,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-h1, h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* from App.css */
+p {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────── */
 :root {
+  /* Legacy tokens (kept for ThemeButton compatibility) */
   --jet: #2C2F33;
   --eerie-black: #212223;
   --platinum: #E0E0E0;
@@ -38,27 +41,59 @@ h1, h3 {
   --ash-gray: #C8C8C8;
   --light-surface: #D8D8D8;
 
+  /* Apple / Cupertino tokens — Light mode (default) */
+  --apple-bg: #F5F5F7;
+  --apple-surface: rgba(255, 255, 255, 0.65);
+  --apple-surface-solid: #ffffff;
+  --apple-text: #1D1D1F;
+  --apple-subtext: #86868B;
+  --apple-accent: #0071E3;
+  --apple-radius: 20px;
+  --apple-radius-full: 9999px;
+  --apple-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 30px rgba(0, 0, 0, 0.06);
+  --apple-border: rgba(172, 179, 184, 0.2);
+
+  /* Semantic aliases used across components */
+  --primary: var(--apple-bg);
+  --bg-primary: var(--apple-surface-solid);
+  --secondary: var(--apple-surface-solid);
+  --tertiary: var(--apple-text);
+  --warning: var(--harvest-gold);
+}
+
+/* Dark mode overrides */
+[data-theme="dark"] {
+  --apple-bg: #1C1C1E;
+  --apple-surface: rgba(44, 44, 46, 0.65);
+  --apple-surface-solid: #2C2C2E;
+  --apple-text: #F5F5F7;
+  --apple-subtext: #8E8E93;
+  --apple-border: rgba(255, 255, 255, 0.1);
+  --apple-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 12px 30px rgba(0, 0, 0, 0.2);
+
+  /* Legacy semantic aliases — dark */
   --primary: var(--jet);
   --bg-primary: var(--eerie-black);
   --secondary: var(--eerie-black);
   --tertiary: var(--platinum);
-  --warning: var(--harvest-gold);
 }
 
+/* ─── Global element styles ──────────────────────────────────────── */
 body {
-  background-color: var(--primary);
+  background-color: var(--apple-bg);
+  color: var(--apple-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6, p {
-  margin-block-start: 1rem;
-  margin-block-end: 1rem;
-  color: var(--tertiary);
+  color: var(--apple-text);
 }
 
 span {
-  color: var(--tertiary);
+  color: var(--apple-text);
 }
 
+/* ─── Layout helpers ─────────────────────────────────────────────── */
 .page-root {
   margin-left: 16px;
   margin-right: 16px;
@@ -74,22 +109,17 @@ span {
 @media screen and (min-width: 1025px) {
   .xl-flex {
     display: flex;
+    gap: 2rem;
   }
 }
 
 .web-content {
-  padding-bottom: 50px;
+  padding-top: 90px;
+  padding-bottom: 80px;
 }
 
 .section {
-  margin-top: 3rem;
-}
-
-.flex-title-container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  background-color: var(--light-dark);
+  margin-top: 4rem;
 }
 
 .col {
@@ -100,6 +130,56 @@ span {
   flex-direction: column;
 }
 
+/* ─── Apple label pill ───────────────────────────────────────────── */
+.apple-label {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--apple-radius-full);
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--apple-subtext);
+}
+
+[data-theme="dark"] .apple-label {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Glass card ─────────────────────────────────────────────────── */
+.glass-card {
+  background: var(--apple-surface);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: var(--apple-radius);
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--apple-shadow);
+}
+
+/* ─── Section headings ───────────────────────────────────────────── */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--apple-text);
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Reveal animation ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ─── External icon links (legacy) ──────────────────────────────── */
 .flex-external-icons-container {
   display: flex;
   justify-content: center;
@@ -116,8 +196,10 @@ span {
   height: 32px;
 }
 
+/* ─── Legacy title class ─────────────────────────────────────────── */
 .title {
-  font-weight: 900;
-  font-size: 50px !important;
-  line-height: 50px;
+  font-weight: 800;
+  font-size: 2rem !important;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }

@@ -36,6 +36,7 @@ export class ThemeUtils {
      * @param {THEME_OPTIONS} theme 
      */
     static changeTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
         switch(theme) {
             case THEME_OPTIONS.LIGHT:
                 document.documentElement.style.setProperty("--primary", "var(--ash-gray)");
