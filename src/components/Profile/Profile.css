@@ -27,7 +27,7 @@
 .profile-role {
     font-size: 0.95rem;
     font-weight: 400;
-    color: var(--apple-subtext);
+    color: var(--apple-accent);
     margin: 0;
     line-height: 1.5;
 }
