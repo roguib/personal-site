@@ -1,17 +1,28 @@
-@media screen and (min-width: 1025px) {
-    #projects .xl-flex .col:first-child {
-        margin-right: 15px;
-    }
-
-    #projects .xl-flex .col:last-child {
-        margin-left: 15px;
-    }
+.projects-layout {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
 }
 
-#projects .xl-flex .col:first-child {
-    margin-bottom: 15px;
+.projects-left {
+    flex: 0 0 240px;
 }
 
-#projects .xl-flex .col:last-child {
-    margin-bottom: 15px;
+.projects-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.projects-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--apple-subtext);
+    margin: 0;
+}
+
+.projects-list {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
