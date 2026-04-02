@@ -30,7 +30,7 @@ const { title = 'Roger Guasch Ibarra' } = Astro.props;
 
         const vars = theme === 'dark'
           ? { '--primary': 'var(--jet)', '--bg-primary': 'var(--eerie-black)', '--secondary': 'var(--eerie-black)', '--tertiary': 'var(--platinum)' }
-          : { '--primary': 'var(--platinum)', '--bg-primary': 'var(--silver)', '--secondary': 'var(--silver)', '--tertiary': 'var(--eerie-black)' };
+          : { '--primary': 'var(--ash-gray)', '--bg-primary': 'var(--light-surface)', '--secondary': 'var(--light-surface)', '--tertiary': 'var(--eerie-black)' };
 
         Object.entries(vars).forEach(([k, v]) =>
           document.documentElement.style.setProperty(k, v)

@@ -38,9 +38,9 @@ export class ThemeUtils {
     static changeTheme(theme) {
         switch(theme) {
             case THEME_OPTIONS.LIGHT:
-                document.documentElement.style.setProperty("--primary", "var(--platinum)");
-                document.documentElement.style.setProperty("--bg-primary", "var(--silver)");
-                document.documentElement.style.setProperty("--secondary", "var(--silver)");
+                document.documentElement.style.setProperty("--primary", "var(--ash-gray)");
+                document.documentElement.style.setProperty("--bg-primary", "var(--light-surface)");
+                document.documentElement.style.setProperty("--secondary", "var(--light-surface)");
                 document.documentElement.style.setProperty("--tertiary", "var(--eerie-black)");
             return;
             case THEME_OPTIONS.DARK:

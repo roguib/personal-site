@@ -35,6 +35,8 @@ h1, h3 {
   --harvest-gold: #ECA400;
   --timberwolf: #DBD9D9;
   --silver: #B5B5B5;
+  --ash-gray: #C8C8C8;
+  --light-surface: #D8D8D8;
 
   --primary: var(--jet);
   --bg-primary: var(--eerie-black);
