@@ -10,16 +10,42 @@ import Projects from '../components/Projects/Projects.jsx';
 <Layout>
   <div class="web-content">
     <Header client:load />
-    <div id="about" class="xl-flex">
-      <div class="col section">
+    <div class="xl-flex section">
+      <div class="col hero-col reveal">
         <Profile />
-        <PersonalDescription />
       </div>
-      <div class="col section">
-        <Editor client:only="react" />
+      <div class="col hero-col reveal" style="transition-delay: 0.15s">
+        <PersonalDescription />
+        <div class="editor-glass-wrapper">
+          <Editor client:only="react" />
+        </div>
       </div>
     </div>
     <JobHistory />
     <Projects />
   </div>
 </Layout>
+
+<style>
+  .hero-col {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero-col:first-child {
+    flex: 0 0 260px;
+  }
+
+  .hero-col:last-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .editor-glass-wrapper {
+    border-radius: var(--apple-radius);
+    overflow: hidden;
+    box-shadow: var(--apple-shadow);
+    margin-top: 1.5rem;
+    align-self: center;
+  }
+</style>

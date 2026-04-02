@@ -184,20 +184,6 @@ Inline `<script>` (5 lines) tracking `mousemove` and updating `--lume-x` / `--lu
 
 ---
 
-## Phase 7 — Footer (new component)
-**Files:** `src/components/Footer/Footer.jsx` *(new)*, `src/components/Footer/Footer.css` *(new)*
-
-### Layout
-Centered row of icon-links inside a glassmorphic pill (matching the nav style):
-- Icons: About (person), Career (layers/briefcase), Projects (grid), Email (mail) — inline SVGs
-- Icon size: `24px`, `color: var(--apple-subtext)`, hover: `color: var(--apple-accent)` + `scale(1.1)` spring transition
-- About / Career / Projects icons reuse the existing `scrollIntoView` logic
-- Email icon links to `mailto:`
-
-Wire `<Footer />` into `index.astro` at the bottom of `web-content`.
-
----
-
 ## Files Changed Summary
 
 | File | Type of change |

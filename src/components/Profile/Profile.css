@@ -1,31 +1,33 @@
-.profile-wrapper {
+.profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-.profile-wrapper p {
-    margin: 7px;
-}
-
-.profile-wrapper p:first-child {
-    font-weight: bold;
-}
-
-.profile-wrapper img {
-    width: 100px;
-    height: 100px;
+.profile-avatar {
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2), 0 0 0 6px rgba(0, 113, 227, 0.06);
+    margin-bottom: 1.25rem;
 }
 
-.name-wrapper {
-    background-color: var(--bg-primary);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
+.profile-name {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--apple-text);
+    margin: 0 0 0.4rem 0;
+}
+
+.profile-role {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--apple-subtext);
+    margin: 0;
+    line-height: 1.5;
 }
