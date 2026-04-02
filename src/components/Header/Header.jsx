@@ -59,6 +59,7 @@ function Header() {
                     {label}
                 </a>
             ))}
+            <div className="header-divider" />
             <ThemeButton />
         </div>
     );
