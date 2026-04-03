@@ -20,14 +20,7 @@ import Projects from '../components/Projects/Projects.jsx';
         </div>
       </div>
     </div>
-    <section id="about" class="section about-section">
-      <div class="about-left">
-        <h1 class="section-title about-title">About</h1>
-      </div>
-      <div class="about-right reveal">
-        <PersonalDescription />
-      </div>
-    </section>
+    <PersonalDescription />
     <JobHistory />
     <Projects />
   </div>
@@ -58,22 +51,4 @@ import Projects from '../components/Projects/Projects.jsx';
     align-items: center;
   }
 
-  .about-section {
-    display: flex;
-    gap: 4rem;
-    align-items: flex-start;
-  }
-
-  .about-left {
-    flex: 0 0 240px;
-  }
-
-  .about-title {
-    margin-top: 0.5rem;
-  }
-
-  .about-right {
-    flex: 1;
-    min-width: 0;
-  }
 </style>

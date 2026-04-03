@@ -26,3 +26,7 @@
     display: flex;
     flex-direction: column;
 }
+
+.projects-list .project-item:first-child {
+    padding-top: 0;
+}

@@ -10,7 +10,7 @@
 }
 
 .job-history-title {
-    margin-top: 0.5rem;
+    margin-top: 0;
     margin-bottom: 0.75rem;
 }
 
@@ -45,6 +45,10 @@
 .job-item {
     padding: 1.75rem 0;
     position: relative;
+}
+
+.job-item:first-child {
+    padding-top: 0;
 }
 
 .job-item-top {

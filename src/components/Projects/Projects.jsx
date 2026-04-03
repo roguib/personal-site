@@ -6,7 +6,7 @@ function Projects() {
     return (
         <div id="projects" className="section projects-layout">
             <div className="projects-left">
-                <h1 className="section-title projects-title">Projects.</h1>
+                <h1 className="section-title projects-title">Projects</h1>
                 <p className="projects-subtitle">A minimalist gallery of code and design experiments.</p>
             </div>
             <div className="projects-list">
