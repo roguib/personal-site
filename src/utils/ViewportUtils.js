@@ -13,7 +13,7 @@ export class ViewportUtils {
                 const element = document.getElementById(item.id);
                 if (!element) return;
                 const rect = element.getBoundingClientRect();
-                if (rect.top < window.innerHeight / 2) {
+                if (rect.top <= 1) {
                     selected = index;
                 }
             }
