@@ -1,20 +1,24 @@
 export class ViewportUtils {
     /**
-     * Returns true if the web element passed as a parameter is inside the viewport
-     * of the browser, false otherwise
+     * Returns the index of the last section (from a list of {id} items) whose top
+     * is in the upper half of the viewport. Falls back to 0 if none qualify.
      *
-     * @param {Element} element 
-     * @returns {boolean}
+     * @param {Array<{id: string}>} sections
+     * @returns {number}
      */
-    static isElementInViewport(element) {
-        const rect = element.getBoundingClientRect();
-    
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+    static getActiveSectionIndex(sections) {
+        let selected = 0;
+        sections.forEach((item, index) => {
+            if (item?.id) {
+                const element = document.getElementById(item.id);
+                if (!element) return;
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight / 2) {
+                    selected = index;
+                }
+            }
+        });
+        return selected;
     }
 }
 

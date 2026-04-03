@@ -1,7 +1,7 @@
 import './Header.css';
 import { useEffect, useState } from 'react';
 import ThemeButton from '../ThemeButton/ThemeButton.jsx';
-import ViewportUtils from '../../utils/ViewportUtils';
+import ViewportUtils from '../../utils/ViewportUtils.js';
 
 const HEADER_DATA = [{
     label: 'About',
@@ -24,16 +24,11 @@ function Header() {
     const [itemSelected, setItemSelected] = useState(0);
 
     useEffect(() => {
-        document.addEventListener('scrollend', () => {
-            HEADER_DATA.forEach((item, index) => {
-                if (item?.id) {
-                    const element = document.getElementById(item?.id);
-                    if (ViewportUtils.isElementInViewport(element)) {
-                        setItemSelected(() => index);
-                    }
-                }
-            });
-        })
+        setItemSelected(ViewportUtils.getActiveSectionIndex(HEADER_DATA));
+
+        const handleScrollEnd = () => setItemSelected(ViewportUtils.getActiveSectionIndex(HEADER_DATA));
+        document.addEventListener('scrollend', handleScrollEnd);
+        return () => document.removeEventListener('scrollend', handleScrollEnd);
     }, []);
 
     const handleItemSelection = (e, itemIndex) => {
