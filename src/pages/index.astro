@@ -10,17 +10,24 @@ import Projects from '../components/Projects/Projects.jsx';
 <Layout>
   <div class="web-content">
     <Header client:load />
-    <div class="xl-flex section">
+    <div id="home" class="xl-flex section">
       <div class="col hero-col reveal">
         <Profile />
       </div>
       <div class="col hero-col reveal" style="transition-delay: 0.15s">
-        <PersonalDescription />
         <div class="editor-glass-wrapper">
           <Editor client:only="react" />
         </div>
       </div>
     </div>
+    <section id="about" class="section about-section">
+      <div class="about-left">
+        <h1 class="section-title about-title">About</h1>
+      </div>
+      <div class="about-right reveal">
+        <PersonalDescription />
+      </div>
+    </section>
     <JobHistory />
     <Projects />
   </div>
@@ -45,7 +52,28 @@ import Projects from '../components/Projects/Projects.jsx';
     border-radius: var(--apple-radius);
     overflow: hidden;
     box-shadow: var(--apple-shadow);
-    margin-top: 1.5rem;
-    align-self: center;
+  }
+
+  .hero-col:last-child {
+    align-items: center;
+  }
+
+  .about-section {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .about-left {
+    flex: 0 0 240px;
+  }
+
+  .about-title {
+    margin-top: 0.5rem;
+  }
+
+  .about-right {
+    flex: 1;
+    min-width: 0;
   }
 </style>

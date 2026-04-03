@@ -4,13 +4,17 @@ import ThemeButton from '../ThemeButton/ThemeButton.jsx';
 import ViewportUtils from '../../utils/ViewportUtils.js';
 
 const HEADER_DATA = [{
+    label: 'Home',
+    id: 'home'
+},
+{
     label: 'About',
     id: 'about'
-}, 
+},
 {
     label: 'Career',
     id: 'job-history'
-}, 
+},
 {
     label: 'Projects',
     id: 'projects'
