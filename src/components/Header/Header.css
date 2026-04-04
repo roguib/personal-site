@@ -1,3 +1,10 @@
+/* ============================================================
+   Header — pill nav (desktop/tablet) + drawer nav (mobile)
+   Breakpoint: ≤640px → mobile drawer; ≥641px → pill nav
+   ============================================================ */
+
+/* ── Pill nav ──────────────────────────────────────────────── */
+
 .header-wrapper {
     position: fixed;
     top: 24px;
@@ -18,6 +25,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 30px rgba(0, 0, 0, 0.06);
 
     white-space: nowrap;
+    animation: nav-fade-in 0.25s ease both;
 }
 
 [data-theme="dark"] .header-wrapper {
@@ -58,3 +66,269 @@
     margin: 0 4px;
     flex-shrink: 0;
 }
+
+/* ── Mobile visibility switches ────────────────────────────── */
+/*
+   Mobile-first: hamburger + drawer are visible by default and
+   the pill is hidden. At ≥641px we reverse that.
+   This keeps the mobile styles as the baseline (no overrides
+   needed for smaller screens).
+*/
+
+@media (min-width: 641px) {
+    /* Show the pill nav on tablet/desktop */
+    .header-wrapper {
+        display: flex;
+    }
+
+    /* Hide mobile-only elements */
+    .nav-hamburger,
+    .nav-backdrop,
+    .nav-drawer {
+        display: none !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Hide the pill nav on mobile */
+    .header-wrapper {
+        display: none;
+    }
+}
+
+/* ── Keyframe animations ───────────────────────────────────── */
+
+/*
+   Single fade-in used by both the pill nav and the hamburger button.
+   Because the Header returns null until after mount (FOUC fix), these
+   elements only appear once the stylesheet is already applied — so the
+   animation is purely a polish gesture, not a timing dependency.
+*/
+@keyframes nav-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes drawer-item-enter {
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Hamburger trigger ─────────────────────────────────────── */
+
+.nav-hamburger {
+    position: fixed;
+    top: 24px;
+    left: 16px;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--apple-radius);
+    border: 1px solid rgba(172, 179, 184, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 12px 30px rgba(0, 0, 0, 0.06);
+
+    color: var(--apple-subtext);
+    cursor: pointer;
+
+    /* Touch target: 44×44px minimum per WCAG 2.5.5 */
+    min-width: 44px;
+    min-height: 44px;
+
+    animation: nav-fade-in 0.25s ease both;
+}
+
+[data-theme="dark"] .nav-hamburger {
+    background: rgba(44, 44, 46, 0.72);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-hamburger:focus-visible {
+    outline: 2px solid var(--apple-accent);
+    outline-offset: 2px;
+}
+
+/* ── Backdrop ──────────────────────────────────────────────── */
+
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 199;
+
+    /* Hidden by default — opacity + pointer-events let CSS transition it */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.nav-backdrop.drawer-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ── Drawer panel ──────────────────────────────────────────── */
+
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: min(72vw, 280px);
+    z-index: 200;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+
+    background: var(--apple-surface);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-right: 1px solid var(--apple-border);
+
+    /* Slides in from the left with an opacity fade for a smooth feel */
+    transform: translateX(-100%);
+    opacity: 0;
+    /* visibility: hidden is applied instantly (not animated), acting as a hard gate
+       that prevents any single-frame flash during Astro hydration before the
+       transform is committed. */
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+}
+
+.nav-drawer.drawer-open {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Respect reduced-motion: remove transitions/animations but keep show/hide logic intact */
+@media (prefers-reduced-motion: reduce) {
+    .nav-drawer          { transition: none; }
+    .nav-backdrop        { transition: none; }
+    .header-wrapper,
+    .nav-hamburger       { animation: none; }
+    .drawer-open .drawer-item { animation: none; }
+}
+
+/* ── Drawer header row (back arrow + "Menu" label) ─────────── */
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--apple-border);
+}
+
+.drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--apple-subtext);
+    padding: 4px;
+
+    /* Touch target */
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.drawer-close:focus-visible {
+    outline: 2px solid var(--apple-accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+.drawer-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--apple-text);
+}
+
+/* ── Drawer nav items ──────────────────────────────────────── */
+
+.drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--apple-radius);
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+
+    color: var(--apple-subtext);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    /* Transition for hover and selection highlight */
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.drawer-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--apple-text);
+}
+
+[data-theme="dark"] .drawer-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.drawer-item:focus-visible {
+    outline: 2px solid var(--apple-accent);
+    outline-offset: 2px;
+}
+
+/* Selected state — overrides the !important on the shared .item-selected rule */
+.drawer-item.item-selected {
+    background: rgba(0, 113, 227, 0.1) !important;
+    color: var(--apple-accent) !important;
+}
+
+[data-theme="dark"] .drawer-item.item-selected {
+    background: rgba(0, 113, 227, 0.2) !important;
+}
+
+.drawer-item-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Drawer item staggered entrance ────────────────────────── */
+/*
+   Animation only fires when .drawer-open is present on the parent
+   drawer, so items don't animate while the drawer is closed or
+   during the closing transition.
+*/
+
+.drawer-open .drawer-item {
+    animation: drawer-item-enter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* .drawer-header is child 1; the four nav buttons are children 2–5 */
+.drawer-open .drawer-item:nth-child(2) { animation-delay: 0.05s; }
+.drawer-open .drawer-item:nth-child(3) { animation-delay: 0.10s; }
+.drawer-open .drawer-item:nth-child(4) { animation-delay: 0.15s; }
+.drawer-open .drawer-item:nth-child(5) { animation-delay: 0.20s; }
+
