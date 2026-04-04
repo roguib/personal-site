@@ -57,3 +57,8 @@ Most components are rendered to static HTML at build time. Interactive component
 - Theme preference is persisted in localStorage
 - Header navigation uses smooth scrolling to sections
 - All content is static - no API calls or dynamic data
+
+## Agent Workflow Mandates
+
+- **UI/UX work** (component layout, responsive design, visual fixes, styling) must be delegated to the `react-ui-architect` agent.
+- **Before every authorization checkpoint** (or before presenting work for user review), the `react-security-reviewer` agent must check all code written in that phase. Only present results to the user after the review passes.
