@@ -51,4 +51,14 @@ import Projects from '../components/Projects/Projects.jsx';
     align-items: center;
   }
 
+  /* On tablet and mobile the hero stacks vertically (xl-flex only activates at ≥1025px).
+     Center the Profile column (photo, name, subtitle) so it doesn't appear left-aligned
+     in a full-width single-column layout. */
+  @media screen and (max-width: 1024px) {
+    .hero-col:first-child {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
 </style>
