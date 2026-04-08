@@ -30,3 +30,21 @@
 .projects-list .project-item:first-child {
     padding-top: 0;
 }
+
+/* ── Tablet (641px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .projects-layout { gap: 2rem; }
+    .projects-left { flex: 0 0 180px; }
+}
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+    .projects-layout {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .projects-left {
+        flex: none;
+        width: 100%;
+    }
+}

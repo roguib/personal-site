@@ -132,3 +132,21 @@
     margin: 0.75rem 0 0 0;
     padding-left: 77px; /* logo-wrapper (52) + gap (1.25rem≈20px) + 5px */
 }
+
+/* ── Tablet (641px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .job-history-layout { gap: 2rem; }
+    .job-history-left { flex: 0 0 180px; }
+}
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+    .job-history-layout {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .job-history-left {
+        flex: none;
+        width: 100%;
+    }
+}

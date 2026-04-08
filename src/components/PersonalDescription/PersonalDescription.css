@@ -40,3 +40,21 @@
 #personal-description-wrapper p:last-child {
     margin-block-end: 0;
 }
+
+/* ── Tablet (641px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .about-layout { gap: 2rem; }
+    .about-left { flex: 0 0 180px; }
+}
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+    .about-layout {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .about-left {
+        flex: none;
+        width: 100%;
+    }
+}

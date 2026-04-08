@@ -140,6 +140,10 @@ span {
     margin-top: 2.5rem;
   }
 
+  #home {
+    margin-top: 0;
+  }
+
   .web-content {
     padding-top: 72px;
     padding-bottom: 48px;

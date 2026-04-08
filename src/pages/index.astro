@@ -45,6 +45,27 @@ import Projects from '../components/Projects/Projects.jsx';
     border-radius: var(--apple-radius);
     overflow: hidden;
     box-shadow: var(--apple-shadow);
+    /* Reserve space matching the Editor's dimensions at each breakpoint.
+       Editor uses client:only="react" so it renders nothing server-side —
+       without min-height the wrapper collapses to 0 until React hydrates,
+       causing a layout shift (CLS) that pushes the sections below downward. */
+    min-height: 500px;
+  }
+
+  @media screen and (max-width: 1500px) {
+    .editor-glass-wrapper { min-height: 450px; }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .editor-glass-wrapper { min-height: 400px; }
+  }
+
+  @media screen and (max-width: 600px) {
+    .editor-glass-wrapper { min-height: 300px; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .editor-glass-wrapper { min-height: 260px; }
   }
 
   .hero-col:last-child {
@@ -58,6 +79,12 @@ import Projects from '../components/Projects/Projects.jsx';
     .hero-col:first-child {
       align-items: center;
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .editor-glass-wrapper {
+      width: calc(100% - 2rem);
     }
   }
 

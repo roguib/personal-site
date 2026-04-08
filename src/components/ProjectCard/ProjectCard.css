@@ -62,3 +62,9 @@
 .project-link:hover .project-link-arrow {
     transform: translateX(4px);
 }
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+    .project-title { font-size: 1.35rem; }
+    .project-item { padding: 1.5rem 0; }
+}
