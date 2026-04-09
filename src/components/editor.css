@@ -14,7 +14,7 @@
   .editor {
     width: 600px !important;
     height: 450px !important;
-    transition: width 2s height 2s;
+    transition: width 2s, height 2s;
   }
 }
 
@@ -22,7 +22,7 @@
   .editor {
     width: 550px !important;
     height: 400px !important;
-    transition: width 2s height 2s;
+    transition: width 2s, height 2s;
   }
 }
 
@@ -30,7 +30,7 @@
   .editor {
     width: 100% !important;
     height: 300px !important;
-    transition: width 2s height 2s;
+    transition: width 2s, height 2s;
   }
 
   .tabs {
@@ -100,12 +100,33 @@
   }
 }
 
+/* Persistent tilt: editor rests at a slight rotateY so it "faces" the reader.
+   Hover and focus-within snap it flat — giving a satisfying, interactive feel.
+   The perspective is set on .editor-glass-wrapper in index.astro so the
+   foreshortening is consistent and not re-applied per element. */
 .editor {
   position: relative;
   width: var(--editor-width);
   height: var(--editor-height);
   background-color: var(--bg);
   border-radius: var(--radius);
+  box-shadow: var(--apple-shadow);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .editor {
+    /* perspective() in the transform function (not a parent perspective property)
+       so it works even when an ancestor has a CSS transform applied (e.g. the
+       reveal animation on .hero-col). A parent transform flattens a child's
+       3D rendering context, so perspective on the parent would have no effect. */
+    transform: perspective(700px) rotateY(-15deg);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .editor:hover,
+  .editor:focus-within {
+    transform: perspective(700px) rotateY(0deg);
+  }
 }
 
 .editor > .header {

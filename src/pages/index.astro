@@ -42,9 +42,10 @@ import Projects from '../components/Projects/Projects.jsx';
   }
 
   .editor-glass-wrapper {
-    border-radius: var(--apple-radius);
-    overflow: hidden;
-    box-shadow: var(--apple-shadow);
+    /* overflow: visible lets the rotateY tilt render without being clipped at
+       the wrapper edges. border-radius and box-shadow have been moved onto
+       .editor itself in editor.css so those visuals are preserved. */
+    overflow: visible;
     /* Reserve space matching the Editor's dimensions at each breakpoint.
        Editor uses client:only="react" so it renders nothing server-side —
        without min-height the wrapper collapses to 0 until React hydrates,
