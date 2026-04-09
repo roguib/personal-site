@@ -9,12 +9,7 @@ class Editor extends React.Component {
   }
 
   componentDidMount() {
-    this.updateCodeSyntaxHighlighting();
     this.typeCode();
-  }
-
-  componentDidUpdate() {
-    this.updateCodeSyntaxHighlighting();
   }
 
   async typeCode() {
@@ -54,12 +49,6 @@ console.log(binarySearch(arr, 0, arr.length, 14));`;
   sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-
-  updateCodeSyntaxHighlighting = () => {
-    document.querySelectorAll("pre code").forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  };
 
   render() {
     return (
@@ -163,7 +152,12 @@ console.log(binarySearch(arr, 0, arr.length, 14));`;
             </div>
           </div>
             <pre className="code">
-              <code class="language-javascript">{this.state.code}</code>
+              <code
+                className="hljs language-javascript"
+                dangerouslySetInnerHTML={{
+                  __html: hljs.highlight(this.state.code, { language: "javascript" }).value,
+                }}
+              />
             </pre>
         </div>
       </div>

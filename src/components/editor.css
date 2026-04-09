@@ -224,7 +224,8 @@
   text-align: initial;
 }
 
-/* remove this once we find a good theme */
 .hljs {
   background: var(--bg) !important;
+  color: #f8f8f2 !important;
 }
+
