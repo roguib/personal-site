@@ -55,7 +55,7 @@ function ThemeButton() {
     return (
         <div className="theme-button-wrapper">
             <button className={buttonClassName} onClick={handleThemeSwitch}></button>
-            <div className={iconsWrapperClassName}>
+            <div className={iconsWrapperClassName} onClick={handleThemeSwitch}>
                 <img src={sunImg.src} />
                 <img src={moonImg.src} />
             </div>

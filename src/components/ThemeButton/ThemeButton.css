@@ -68,6 +68,7 @@ div {
     height: 100%;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 }
 
 .initial-dark-background {
