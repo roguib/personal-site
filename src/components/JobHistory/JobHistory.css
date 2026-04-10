@@ -95,6 +95,13 @@
     object-fit: contain;
 }
 
+/* In dark mode the icon's baked-in dark background blends into the card.
+   invert(1) flips every channel: dark background → light, light elements → dark,
+   making the icon visible against the dark surface. */
+[data-theme="dark"] .job-logo-card .job-logo {
+    filter: invert(1);
+}
+
 /* ── Job text ─────────────────────────────────────────────────── */
 .job-header {
     display: flex;
