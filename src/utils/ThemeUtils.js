@@ -13,12 +13,10 @@ export class ThemeUtils {
      * @returns {boolean}
      */
     static prefersDarkTheme() {
-        if (window?.localStorage.getItem(THEME_KEY) === THEME_OPTIONS.DARK) {
-            return true;
-        } else if (window?.localStorage.getItem(THEME_KEY) === THEME_OPTIONS.LIGHT) {
-            return false;
-        }
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const stored = window?.localStorage?.getItem(THEME_KEY);
+        if (stored === THEME_OPTIONS.DARK) return true;
+        if (stored === THEME_OPTIONS.LIGHT) return false;
+        return !!(window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
     }
 
     /**
@@ -27,7 +25,7 @@ export class ThemeUtils {
      * @param {'light' | 'dark'} preferedTheme 
      */
     static updateThemePreferences(preferedTheme) {
-        localStorage.setItem(THEME_KEY, preferedTheme);
+        window?.localStorage?.setItem(THEME_KEY, preferedTheme);
     }
 
     /**
