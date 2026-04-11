@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
+import i18n from '../utils/i18n.js';
 
-const { title = 'Roger Guasch Ibarra' } = Astro.props;
+const { title = i18n('meta.title') } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -9,7 +10,7 @@ const { title = 'Roger Guasch Ibarra' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#F5F5F7" />
-    <meta name="description" content="Roger Guasch Ibarra, personal website" />
+    <meta name="description" content={i18n('meta.description')} />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />

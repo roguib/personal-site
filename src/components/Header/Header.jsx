@@ -2,25 +2,32 @@ import './Header.css';
 import { useEffect, useRef, useState } from 'react';
 import ThemeButton from '../ThemeButton/ThemeButton.jsx';
 import ViewportUtils from '../../utils/ViewportUtils.js';
+import i18n from '../../utils/i18n.js';
 
 const HEADER_DATA = [{
-    label: 'Home',
-    id: 'home'
+    label: i18n('navbar.sections.home'),
+    id: 'home',
+    iconKey: 'Home'
 },
 {
-    label: 'About',
-    id: 'about'
+    label: i18n('navbar.sections.about'),
+    id: 'about',
+    iconKey: 'About'
 },
 {
-    label: 'Career',
-    id: 'job-history'
+    label: i18n('navbar.sections.career'),
+    id: 'job-history',
+    iconKey: 'Career'
 },
 {
-    label: 'Projects',
-    id: 'projects'
+    label: i18n('navbar.sections.projects'),
+    id: 'projects',
+    iconKey: 'Projects'
 },
 // {
-//     label: 'Blog'
+//     label: i18n('navbar.sections.blog'),
+//     id: 'blog',
+//     iconKey: 'Blog'
 // }
 ];
 
@@ -130,7 +137,7 @@ function Header() {
     return (
         <>
             {/* ── Desktop / tablet pill nav ─────────────────────────────────── */}
-            <div id="header" className="header-wrapper" aria-label="Site navigation">
+            <div id="header" className="header-wrapper" aria-label={i18n('navbar.ariaLabel')}>
                 {HEADER_DATA.map(({ label }, index) => (
                     <a
                         key={index}
@@ -153,7 +160,7 @@ function Header() {
             <button
                 ref={hamburgerRef}
                 className="nav-hamburger"
-                aria-label="Open navigation menu"
+                aria-label={i18n('navbar.openMenu')}
                 aria-expanded={drawerOpen ? 'true' : 'false'}
                 aria-controls="mobile-drawer"
                 onClick={() => setDrawerOpen(true)}
@@ -189,7 +196,7 @@ function Header() {
                 className={`nav-drawer${drawerOpen ? ' drawer-open' : ''}`}
                 role="dialog"
                 aria-modal="true"
-                aria-label="Navigation menu"
+                aria-label={i18n('navbar.menuAriaLabel')}
                 aria-hidden={!drawerOpen}
                 inert={!drawerOpen ? '' : undefined}
             >
@@ -198,7 +205,7 @@ function Header() {
                     <button
                         ref={drawerCloseRef}
                         className="drawer-close"
-                        aria-label="Close navigation menu"
+                        aria-label={i18n('navbar.closeMenu')}
                         onClick={() => setDrawerOpen(false)}
                     >
                         {/* Left-pointing chevron — more universally recognisable than ← on mobile */}
@@ -206,12 +213,12 @@ function Header() {
                             <path d="M13 16l-6-6 6-6" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </button>
-                    <span className="drawer-title">Menu</span>
+                    <span className="drawer-title">{i18n('navbar.menuTitle')}</span>
                     <ThemeButton />
                 </div>
 
                 {/* Nav items */}
-                {HEADER_DATA.map(({ label }, index) => (
+                {HEADER_DATA.map(({ label, iconKey }, index) => (
                     <button
                         key={index}
                         className={`drawer-item${itemSelected === index ? ' item-selected' : ''}`}
@@ -219,7 +226,7 @@ function Header() {
                         aria-current={itemSelected === index ? 'location' : undefined}
                     >
                         <span className="drawer-item-icon">
-                            {NAV_ICONS[label]}
+                            {NAV_ICONS[iconKey]}
                         </span>
                         {label}
                     </button>

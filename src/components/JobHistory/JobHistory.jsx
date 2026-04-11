@@ -2,26 +2,27 @@ import React from 'react';
 import './JobHistory.css';
 import oracleBrandingLogo from '../../images/oracle-branding-logo.png'
 import companyNoLogo from '../../images/company-no-logo.png';
+import i18n from '../../utils/i18n.js';
 
 const JOB_DATA = [{
-    position: 'Senior Member of Technical Staff at Oracle - IC3',
-    project: 'Visual Builder Studio',
-    date: '2022 - Present',
-    description: 'Focusing on complex feature implementations and architecture within the cloud platform.',
+    position: i18n('career.jobs.smts.position'),
+    project: i18n('career.jobs.smts.project'),
+    date: i18n('career.jobs.smts.date'),
+    description: i18n('career.jobs.smts.description'),
     brandingLogo: oracleBrandingLogo,
     fillLogo: true
 }, {
-    position: 'Member of Technical Staff at Oracle - IC2',
-    project: 'Visual Builder Studio',
-    date: '2021 - 2022',
-    description: 'Initial relocation to Prague, contributing to the development of the collaborative application development ecosystem.',
+    position: i18n('career.jobs.mts.position'),
+    project: i18n('career.jobs.mts.project'),
+    date: i18n('career.jobs.mts.date'),
+    description: i18n('career.jobs.mts.description'),
     brandingLogo: oracleBrandingLogo,
     fillLogo: true
 }, {
-    position: 'Software Developer',
-    project: 'Several small projects',
-    date: '2020 - 2021',
-    description: 'Laying the foundation of engineering principles through various freelance and internal development initiatives.',
+    position: i18n('career.jobs.freelance.position'),
+    project: i18n('career.jobs.freelance.project'),
+    date: i18n('career.jobs.freelance.date'),
+    description: i18n('career.jobs.freelance.description'),
     brandingLogo: companyNoLogo,
     fillLogo: false
 }];
@@ -30,8 +31,8 @@ function JobHistory() {
     return (
         <div id="job-history" className="section job-history-layout">
             <div className="job-history-left">
-                <h1 className="section-title job-history-title">Career</h1>
-                <p className="job-history-subtitle">Building enterprise-grade solutions at scale.</p>
+                <h1 className="section-title job-history-title">{i18n('career.title')}</h1>
+                <p className="job-history-subtitle">{i18n('career.subtitle')}</p>
             </div>
             <div className="job-list">
                 {JOB_DATA.map(({ position, project, date, description, brandingLogo, fillLogo }, index) => (

@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "title": "Roger Guasch Ibarra",
+    "description": "Roger Guasch Ibarra, personal website"
+  },
+  "navbar": {
+    "ariaLabel": "Site navigation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "menuTitle": "Menu",
+    "menuAriaLabel": "Navigation menu",
+    "sections": {
+      "home": "Home",
+      "about": "About",
+      "career": "Career",
+      "projects": "Projects"
+    }
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "A bit about who I am and what I do.",
+    "p1": "In 2021 I moved from Barcelona to the beautiful city of Prague to start a Software Development Engineer position at Oracle. My current focus relies on developing features and fixing bugs in Visual Builder, a cloud-based platform designed for collaborative application development.",
+    "p2": "I dedicate most of my time working on the Javascript ecosystem, although recently I've been more focused on Preact components alongside Typescript.",
+    "p3": "I'm always keen into exploring new technologies and expand my knowledge. In 2023 I got certified as a Java SE 8 Programmer Oracle Certified Associate, mainly motivated by the fact that most of my team works in the backend."
+  },
+  "career": {
+    "title": "Career",
+    "subtitle": "Building enterprise-grade solutions at scale.",
+    "jobs": {
+      "smts": {
+        "position": "Senior Member of Technical Staff at Oracle - IC3",
+        "project": "Visual Builder Studio",
+        "date": "2022 - Present",
+        "description": "Focusing on complex feature implementations and architecture within the cloud platform."
+      },
+      "mts": {
+        "position": "Member of Technical Staff at Oracle - IC2",
+        "project": "Visual Builder Studio",
+        "date": "2021 - 2022",
+        "description": "Initial relocation to Prague, contributing to the development of the collaborative application development ecosystem."
+      },
+      "freelance": {
+        "position": "Software Developer",
+        "project": "Several small projects",
+        "date": "2020 - 2021",
+        "description": "Laying the foundation of engineering principles through various freelance and internal development initiatives."
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A minimalist gallery of code and design experiments.",
+    "items": {
+      "monkey": {
+        "category": "Compilers & Interpreters",
+        "title": "Monkey programming language interpreter",
+        "description": "A Java 8 implementation of the Monkey programming language, inspired by the book 'Writing an Interpreter in Go', incorporates fundamental features including variable binding, arithmetic expressions, built-in functions, closures, and more.",
+        "links": {
+          "github": "Source code on Github"
+        }
+      },
+      "ngVsSnippets": {
+        "category": "Developer Tooling",
+        "title": "Automatic Angular snippets generator for VSCode",
+        "description": "A small Javascript library that parses any Angular codebase and generates custom snippets for VS Code editor. I programmed this library when I was working with Angular, as I felt I was constantly looking over the component's properties.",
+        "links": {
+          "github": "Source code on Github",
+          "npm": "NPM package"
+        }
+      }
+    }
+  },
+  "profile": {
+    "imgAlt": "Profile picture",
+    "name": "Roger Guasch Ibarra",
+    "role": "Software Developer Engineer"
+  },
+  "editor": {
+    "fileName": "dicSearch.js",
+    "jsIconAriaLabel": "Icon for JavaScript language"
+  }
+}
