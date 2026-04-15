@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 600px) {
   .editor {
-    width: 450px !important;
+    width: 100% !important;
     height: 300px !important;
     transition: width 2s height 2s;
   }
@@ -40,6 +40,63 @@
 
   .code {
     overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .editor {
+    width: 100% !important;
+    height: 260px !important;
+  }
+  .editor > div > .side-btns {
+    width: 22px !important;
+    flex-shrink: 0;
+  }
+  .editor > div > .side-btns > .side-btns-wrapper {
+    padding-top: 14px;
+  }
+  .editor > div > .side-btns > .side-btns-wrapper > .side-btns-icon {
+    width: 10px !important;
+    height: 10px !important;
+    margin-bottom: 8px;
+  }
+  .editor > .tabs {
+    left: 22px !important;
+    width: calc(100% - 22px) !important;
+    margin-top: 14px !important;
+    height: 22px !important;
+  }
+  .editor > .tabs > .tab {
+    padding: 3px !important;
+  }
+  .editor > .tabs > .tab > svg {
+    width: 10px !important;
+    height: 10px !important;
+    margin-right: 6px !important;
+  }
+  div.editor > .tabs > .tab > span {
+    font-size: 0.7rem !important;
+  }
+  .editor > .header {
+    height: 14px !important;
+  }
+  .editor > .header > .window-btns {
+    padding: 3px 3px 3px 8px !important;
+  }
+  .editor > .header > .window-btns > .btn {
+    width: 8px !important;
+    height: 8px !important;
+  }
+  .editor > .wrapper {
+    overflow: hidden;
+  }
+  .editor > div > .code {
+    overflow-x: auto;
+    overflow-y: auto;
+    min-height: 0;
+    flex: 1;
+    min-width: 0;
+    margin-top: 41px;
   }
 }
 
@@ -167,7 +224,8 @@
   text-align: initial;
 }
 
-/* remove this once we find a good theme */
 .hljs {
   background: var(--bg) !important;
+  color: #f8f8f2 !important;
 }
+
