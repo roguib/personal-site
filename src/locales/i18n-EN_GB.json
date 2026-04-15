@@ -19,9 +19,9 @@
   "about": {
     "title": "About",
     "subtitle": "A bit about who I am and what I do.",
-    "p1": "In 2021 I moved from Barcelona to the beautiful city of Prague to start a Software Development Engineer position at Oracle. My current focus relies on developing features and fixing bugs in Visual Builder, a cloud-based platform designed for collaborative application development.",
-    "p2": "I dedicate most of my time working on the Javascript ecosystem, although recently I've been more focused on Preact components alongside Typescript.",
-    "p3": "I'm always keen into exploring new technologies and expand my knowledge. In 2023 I got certified as a Java SE 8 Programmer Oracle Certified Associate, mainly motivated by the fact that most of my team works in the backend."
+    "p1": "In 2021, I moved from Barcelona to Prague to join Oracle as a Software Development Engineer. Since then, I have been deeply involved in Visual Builder, a cloud-based platform for collaborative application development, where I focus on delivering robust features and resolving complex technical challenges.",
+    "p2": "After four years abroad, I returned to Barcelona, where I continue to evolve the Visual Builder ecosystem. My current mission focuses on leveraging the latest advancements in AI to deliver robust and efficient solutions. I am also committed to staying ahead by constantly evolving my own workflow and integrating AI tools whenever possible to build faster and smarter.",
+    "p3": "I am a lifelong learner with a passion for exploring emerging technologies. Beyond my daily work, I hold several industry credentials, including the Java SE 8 Oracle Certified Associate, as well as certifications in Java Spring Boot and Artificial Intelligence."
   },
   "career": {
     "title": "Career",
@@ -31,19 +31,19 @@
         "position": "Senior Member of Technical Staff at Oracle - IC3",
         "project": "Visual Builder Studio",
         "date": "2022 - Present",
-        "description": "Focusing on complex feature implementations and architecture within the cloud platform."
+        "description": "Leading the development of features across several areas of the product and resolving critical customer issues. My work focuses on modernizing the Visual Builder ecosystem while evolving my workflow with the latest advancements in AI to deliver refined solutions."
       },
       "mts": {
         "position": "Member of Technical Staff at Oracle - IC2",
         "project": "Visual Builder Studio",
         "date": "2021 - 2022",
-        "description": "Initial relocation to Prague, contributing to the development of the collaborative application development ecosystem."
+        "description": "Contributed to the core functionality of Visual Builder by developing new features and resolving technical challenges."
       },
       "freelance": {
         "position": "Software Developer",
         "project": "Several small projects",
         "date": "2020 - 2021",
-        "description": "Laying the foundation of engineering principles through various freelance and internal development initiatives."
+        "description": "Developed key frontend solutions for a B2B media marketplace and a multi-tenant e-commerce platform. Using Angular, I built tools that gave small businesses access to online retailing."
       }
     }
   },
