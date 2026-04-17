@@ -1,7 +1,9 @@
 export class ViewportUtils {
     /**
-     * Returns the index of the last section (from a list of {id} items) whose top
-     * is in the upper half of the viewport. Falls back to 0 if none qualify.
+     * Returns the index of the section whose bounding box crosses the vertical
+     * center of the visible content area (viewport minus fixed header). If no
+     * section straddles the center, falls back to the nearest section, with
+     * explicit pins for the top and bottom of the page.
      *
      * @param {Array<{id: string}>} sections
      * @returns {number}
@@ -9,38 +11,39 @@ export class ViewportUtils {
     static getActiveSectionIndex(sections) {
         const viewportHeight = window.innerHeight;
         const lastIdx = sections.length - 1;
+        if (lastIdx < 0) return 0;
 
-        // A section should become active when its content is actually visible to
-        // the user — i.e. when its top edge has cleared the fixed nav header.
-        // Querying the header's bottom dynamically handles any size/breakpoint.
+        // Pin top/bottom so the first/last nav item is always highlighted at the
+        // page extremes, even when the section doesn't fill the content area.
+        const scrollY = window.scrollY || window.pageYOffset || 0;
+        const docHeight = document.documentElement.scrollHeight;
+        if (scrollY <= 0) return 0;
+        if (scrollY + viewportHeight >= docHeight - 1) return lastIdx;
+
         const headerEl = document.getElementById('header');
-        const threshold = headerEl ? Math.max(1, headerEl.getBoundingClientRect().bottom) : 80;
+        const headerBottom = headerEl ? Math.max(0, headerEl.getBoundingClientRect().bottom) : 0;
+        const centerY = headerBottom + (viewportHeight - headerBottom) / 2;
 
-        let selected = 0;
-        let maxVisible = 0;
-        let lastVisible = 0;
+        let nearestIdx = 0;
+        let nearestDist = Infinity;
 
-        sections.forEach((item, index) => {
-            if (!item?.id) return;
+        for (let index = 0; index <= lastIdx; index++) {
+            const item = sections[index];
+            if (!item?.id) continue;
             const el = document.getElementById(item.id);
-            if (!el) return;
+            if (!el) continue;
             const rect = el.getBoundingClientRect();
 
-            if (rect.top <= threshold) selected = index;
+            if (rect.top <= centerY && rect.bottom > centerY) return index;
 
-            const visible = Math.max(0, Math.min(viewportHeight, rect.bottom) - Math.max(0, rect.top));
-            if (visible > maxVisible) maxVisible = visible;
-            if (index === lastIdx) lastVisible = visible;
-        });
-
-        // The last section may never reach rect.top <= threshold when the page
-        // isn't tall enough to scroll it up that far. Activate it when it's the
-        // dominant section: more than 50% of the viewport and more than any other.
-        if (selected < lastIdx && lastVisible > viewportHeight * 0.5 && lastVisible >= maxVisible) {
-            selected = lastIdx;
+            const dist = Math.abs((rect.top + rect.bottom) / 2 - centerY);
+            if (dist < nearestDist) {
+                nearestDist = dist;
+                nearestIdx = index;
+            }
         }
 
-        return selected;
+        return nearestIdx;
     }
 }
 
