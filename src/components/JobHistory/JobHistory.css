@@ -1,20 +1,159 @@
-.job-branding-logo {
-    height: 80px;
-    width: 80px;
-}
-.job-row {
+/* ── Section two-column layout ───────────────────────────────── */
+.job-history-layout {
     display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.job-history-left {
+    flex: 0 0 240px;
+}
+
+.job-history-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.job-history-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--apple-subtext);
+    margin: 0;
+}
+
+/* ── Timeline list ───────────────────────────────────────────── */
+.job-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+}
+
+/* Vertical connecting line through logo centers */
+.job-list::before {
+    content: '';
+    position: absolute;
+    left: 26px; /* center of 52px logo-wrapper */
+    top: 26px;
+    bottom: 26px;
+    width: 1px;
+    background: var(--apple-border);
+    z-index: 0;
+}
+
+.job-item {
+    padding: 1.75rem 0;
+    position: relative;
+}
+
+.job-item:first-child {
+    padding-top: 0;
+}
+
+.job-item-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+/* ── Logo wrapper ─────────────────────────────────────────────── */
+.job-logo-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Oracle-style: logo fills the entire wrapper */
+.job-logo-fill {
+    background: transparent;
+}
+
+.job-logo-fill .job-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Generic company: card style with padding */
+.job-logo-card {
+    background: var(--apple-surface-solid);
+    box-shadow: var(--apple-shadow);
+}
+
+.job-logo-card .job-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* In dark mode the icon's baked-in dark background blends into the card.
+   invert(1) flips every channel: dark background → light, light elements → dark,
+   making the icon visible against the dark surface. */
+[data-theme="dark"] .job-logo-card .job-logo {
+    filter: invert(1);
+}
+
+/* ── Job text ─────────────────────────────────────────────────── */
+.job-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 0.3rem;
+}
+
+.job-position {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--apple-text);
+    line-height: 1.3;
+}
+
+.job-project {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--apple-accent);
+}
+
+.job-date {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--apple-subtext);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.1rem;
 }
 
 .job-description {
-    display: flex;
-    flex-direction: column;
-    /* fill the entire space */
-    flex: 1;
-    justify-content: space-around;
-    margin-left: 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--apple-subtext);
+    margin: 0.75rem 0 0 0;
+    padding-left: 77px; /* logo-wrapper (52) + gap (1.25rem≈20px) + 5px */
 }
 
-.job-description span:first-child {
-    font-weight: bold;
+/* ── Tablet (641px – 1024px) ── */
+@media (max-width: 1024px) and (min-width: 641px) {
+    .job-history-layout { gap: 2rem; }
+    .job-history-left { flex: 0 0 180px; }
+}
+
+/* ── Mobile (≤ 640px) ── */
+@media (max-width: 640px) {
+    .job-history-layout {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    .job-history-left {
+        flex: none;
+        width: 100%;
+    }
 }

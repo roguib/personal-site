@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header/Header.jsx';
+import Profile from '../components/Profile/Profile.jsx';
+import PersonalDescription from '../components/PersonalDescription/PersonalDescription.jsx';
+import Editor from '../components/editor.jsx';
+import JobHistory from '../components/JobHistory/JobHistory.jsx';
+import Projects from '../components/Projects/Projects.jsx';
+---
+<Layout>
+  <div class="web-content">
+    <Header client:load />
+    <div id="home" class="xl-flex section">
+      <div class="col hero-col reveal">
+        <Profile />
+      </div>
+      <div class="col hero-col reveal" style="transition-delay: 0.15s">
+        <div class="editor-glass-wrapper">
+          <Editor client:only="react" />
+        </div>
+      </div>
+    </div>
+    <PersonalDescription />
+    <JobHistory />
+    <Projects />
+  </div>
+</Layout>
+
+<style>
+  .hero-col {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hero-col:first-child {
+    flex: 0 0 260px;
+  }
+
+  .hero-col:last-child {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .editor-glass-wrapper {
+    /* overflow: visible lets the rotateY tilt render without being clipped at
+       the wrapper edges. border-radius and box-shadow have been moved onto
+       .editor itself in editor.css so those visuals are preserved. */
+    overflow: visible;
+    /* Reserve space matching the Editor's dimensions at each breakpoint.
+       Editor uses client:only="react" so it renders nothing server-side —
+       without min-height the wrapper collapses to 0 until React hydrates,
+       causing a layout shift (CLS) that pushes the sections below downward. */
+    min-height: 500px;
+  }
+
+  @media screen and (max-width: 1500px) {
+    .editor-glass-wrapper { min-height: 450px; }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .editor-glass-wrapper { min-height: 400px; }
+  }
+
+  @media screen and (max-width: 600px) {
+    .editor-glass-wrapper { min-height: 300px; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .editor-glass-wrapper { min-height: 260px; }
+  }
+
+  .hero-col:last-child {
+    align-items: center;
+  }
+
+  /* On tablet and mobile the hero stacks vertically (xl-flex only activates at ≥1025px).
+     Center the Profile column (photo, name, subtitle) so it doesn't appear left-aligned
+     in a full-width single-column layout. */
+  @media screen and (max-width: 1024px) {
+    .hero-col:first-child {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .editor-glass-wrapper {
+      width: calc(100% - 2rem);
+    }
+  }
+
+</style>

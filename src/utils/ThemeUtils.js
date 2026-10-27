@@ -13,12 +13,10 @@ export class ThemeUtils {
      * @returns {boolean}
      */
     static prefersDarkTheme() {
-        if (window?.localStorage.getItem(THEME_KEY) === THEME_OPTIONS.DARK) {
-            return true;
-        } else if (window?.localStorage.getItem(THEME_KEY) === THEME_OPTIONS.LIGHT) {
-            return false;
-        }
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const stored = window?.localStorage?.getItem(THEME_KEY);
+        if (stored === THEME_OPTIONS.DARK) return true;
+        if (stored === THEME_OPTIONS.LIGHT) return false;
+        return !!(window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches);
     }
 
     /**
@@ -27,7 +25,7 @@ export class ThemeUtils {
      * @param {'light' | 'dark'} preferedTheme 
      */
     static updateThemePreferences(preferedTheme) {
-        localStorage.setItem(THEME_KEY, preferedTheme);
+        window?.localStorage?.setItem(THEME_KEY, preferedTheme);
     }
 
     /**
@@ -36,11 +34,12 @@ export class ThemeUtils {
      * @param {THEME_OPTIONS} theme 
      */
     static changeTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
         switch(theme) {
             case THEME_OPTIONS.LIGHT:
-                document.documentElement.style.setProperty("--primary", "var(--platinum)");
-                document.documentElement.style.setProperty("--bg-primary", "var(--silver)");
-                document.documentElement.style.setProperty("--secondary", "var(--silver)");
+                document.documentElement.style.setProperty("--primary", "var(--ash-gray)");
+                document.documentElement.style.setProperty("--bg-primary", "var(--light-surface)");
+                document.documentElement.style.setProperty("--secondary", "var(--light-surface)");
                 document.documentElement.style.setProperty("--tertiary", "var(--eerie-black)");
             return;
             case THEME_OPTIONS.DARK:

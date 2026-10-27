@@ -68,6 +68,7 @@ div {
     height: 100%;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
 }
 
 .initial-dark-background {
@@ -123,4 +124,15 @@ img {
 .theme-icons-wrapper img {
     width: var(--theme-icons-size);
     height: var(--theme-icons-size);
+}
+
+/* Dark mode: override all background states with a dark surface */
+[data-theme="dark"] .theme-icons-wrapper,
+[data-theme="dark"] .initial-light-background,
+[data-theme="dark"] .initial-dark-background,
+[data-theme="dark"] .light-background,
+[data-theme="dark"] .dark-background {
+    background-color: #3A3A3C !important;
+    animation: none !important;
+    border-radius: 10px;
 }
